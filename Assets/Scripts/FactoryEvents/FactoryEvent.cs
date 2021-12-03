@@ -13,8 +13,10 @@ namespace Assets.Scripts.FactoryEvents
 
         public Func<bool> TriggerCondition { get; set; }
 
-        public int BalanceChange { get; set; }
-        public int ExpensesChange { get; set; }
+        public int BalanceChangeIfAccepted { get; set; }
+        public int ExpensesChangeIfAccepted { get; set; }
+        public int BalanceChangeIfRejected { get; set; }
+        public int ExpensesChangeIfRejected { get; set; }
 
         public List<FactoryEvent> NextEventsIfAccepted { get; set; }
         public List<FactoryEvent> NextEventsIfRejected { get; set; }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Assets.Scripts.FactoryEvents;
 
-public class EventManager : MonoBehaviour
+public class FactoryEventManager : MonoBehaviour
 {
     private List<FactoryEvent> nextFactoryEvents;
     private FactoryEvent currentEvent = null;
@@ -12,6 +12,7 @@ public class EventManager : MonoBehaviour
     private GameObject displayedEventPanel;
 
     private GameObject ResourcesTimeManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,24 +29,42 @@ public class EventManager : MonoBehaviour
             {
                 if (availablEvent.TriggerCondition())
                     ActivateEvent(availablEvent);
-
-
             }
     }
 
     void ActivateEvent(FactoryEvent startedEvent)
     {
         currentEvent = startedEvent;
-        var eventTitleField = displayedEventPanel.transform.Find("EventTitle").GetComponent(typeof(Text)) as Text;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().isPaused = true;
+
+        var eventTitleField = displayedEventPanel.transform.Find("EventTitle").
+            GetComponent(typeof(Text)) as Text;
+        eventTitleField.text = startedEvent.Title;
+
+        var eventDescriptionField = displayedEventPanel.transform.Find("TextEventDescription").
+            GetComponent(typeof(Text)) as Text;
+        eventDescriptionField.text = startedEvent.DescriptionText;
     }
 
     public void AcceptEvent()
     {
+        nextFactoryEvents = currentEvent.NextEventsIfAccepted;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().balance += currentEvent.
+            BalanceChangeIfAccepted;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().expenses += currentEvent.
+            ExpensesChangeIfAccepted;
 
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().isPaused = false;
     }
 
     public void RejectEvent()
     {
+        nextFactoryEvents = currentEvent.NextEventsIfRejected;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().balance += currentEvent.
+            BalanceChangeIfRejected;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().expenses += currentEvent.
+            ExpensesChangeIfRejected;
 
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().isPaused = false;
     }
 }
