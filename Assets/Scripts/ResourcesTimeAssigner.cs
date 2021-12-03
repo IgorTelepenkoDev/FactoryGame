@@ -9,10 +9,12 @@ public class ResourcesTimeAssigner : MonoBehaviour
     public Text BalanceText;
     public Text CurrentDate;
     public Text ExpensesText;
+    public Text ClimateText;
     public DateTime date = DateTime.Now;
     public string sDate;
     public int expenses { get; set; }
     public int balance { get; set; }
+    public int climate { get; set; }
     public bool isPaused = false;
     Coroutine timer;
     public float timeUnit = 2f;
