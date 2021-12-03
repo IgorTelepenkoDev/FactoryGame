@@ -14,6 +14,7 @@ public class ResourcesTimeAssigner : MonoBehaviour
     public int expenses;
     public bool isPaused = false;
     Coroutine timer;
+    public float timeUnit = 2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +49,7 @@ public class ResourcesTimeAssigner : MonoBehaviour
 
     IEnumerator Timer(float countTime = 1f)
     {
+        countTime = timeUnit;
         while(true)
         {
             yield return new WaitForSeconds(countTime);
