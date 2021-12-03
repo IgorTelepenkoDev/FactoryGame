@@ -31,29 +31,24 @@ public class ResourcesTimeAssigner : MonoBehaviour
         //  var balanceText = GameObject.Find("FieldBalance");
         //   balanceText.text = "123";
         timer = StartCoroutine(Timer());
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if( Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             if (isPaused)
             {
-                timer = ResumeTime();
-                isPaused = false;
+                StartTime();
             }
             else
             {
-                StopTime(timer);
-                isPaused = true;
+                StopTime();
             }
             
         }
 
-       
-        
         BalanceText.text = balance.ToString();
         ExpensesText.text = expenses.ToString();
     }
@@ -76,13 +71,17 @@ public class ResourcesTimeAssigner : MonoBehaviour
 
 
 
-    public void StopTime(Coroutine t)
+    public void StopTime()
     {
-        StopCoroutine(t);
+        isPaused = true;   
+
+        StopCoroutine(timer);
     }
 
-    public Coroutine ResumeTime()
+    public void StartTime()
     {
-       return StartCoroutine(Timer());
+        isPaused = false;
+
+        timer = StartCoroutine(Timer());
     }
 }

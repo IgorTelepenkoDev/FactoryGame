@@ -9,7 +9,7 @@ namespace Assets.Scripts.FactoryEvents
     public class FactoryEvent
     {
         public string Title { get; set; }
-        public string DescriptionText { get; set; }
+        public string Description { get; set; }
 
         public Func<bool> TriggerCondition { get; set; }
 
