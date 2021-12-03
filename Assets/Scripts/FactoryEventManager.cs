@@ -10,17 +10,20 @@ public class EventManager : MonoBehaviour
     private FactoryEvent currentEvent = null;
 
     private GameObject displayedEventPanel;
+
+    private GameObject ResourcesTimeManager;
     // Start is called before the first frame update
     void Start()
     {
         // Assign default event to the list
         displayedEventPanel = GameObject.FindGameObjectWithTag("PanelFactoryEvent");
+        ResourcesTimeManager = GameObject.FindGameObjectWithTag("ResourcesTimeManager");
     }
 
     // Update is called once per frame
     void Update()
     {
-     //   if (!timeIsStopped)
+        if (!ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().isPaused)
             foreach (var availablEvent in nextFactoryEvents)
             {
                 if (availablEvent.TriggerCondition())
@@ -29,11 +32,11 @@ public class EventManager : MonoBehaviour
 
             }
     }
-    
+
     void ActivateEvent(FactoryEvent startedEvent)
     {
         currentEvent = startedEvent;
-        //Text title
+        var eventTitleField = displayedEventPanel.transform.Find("EventTitle").GetComponent(typeof(Text)) as Text;
     }
 
     public void AcceptEvent()
