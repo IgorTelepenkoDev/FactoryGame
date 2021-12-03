@@ -1667,6 +1667,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694308e8c21df8c42acdb8f2cb7473f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BalanceText: {fileID: 902421970}
+  CurrentDate: {fileID: 922810404}
 --- !u!1 &2002782754
 GameObject:
   m_ObjectHideFlags: 0
