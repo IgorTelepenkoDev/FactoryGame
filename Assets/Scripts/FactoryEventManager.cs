@@ -35,7 +35,7 @@ public class FactoryEventManager : MonoBehaviour
     void ActivateEvent(FactoryEvent startedEvent)
     {
         currentEvent = startedEvent;
-        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().isPaused = true;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StopTime();
 
         var eventTitleField = displayedEventPanel.transform.Find("EventTitle").
             GetComponent(typeof(Text)) as Text;
@@ -43,7 +43,7 @@ public class FactoryEventManager : MonoBehaviour
 
         var eventDescriptionField = displayedEventPanel.transform.Find("TextEventDescription").
             GetComponent(typeof(Text)) as Text;
-        eventDescriptionField.text = startedEvent.DescriptionText;
+        eventDescriptionField.text = startedEvent.Description;
     }
 
     public void AcceptEvent()
@@ -54,7 +54,7 @@ public class FactoryEventManager : MonoBehaviour
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().expenses += currentEvent.
             ExpensesChangeIfAccepted;
 
-        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().isPaused = false;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StartTime();
     }
 
     public void RejectEvent()
@@ -65,6 +65,6 @@ public class FactoryEventManager : MonoBehaviour
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().expenses += currentEvent.
             ExpensesChangeIfRejected;
 
-        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().isPaused = false;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StartTime();
     }
 }
