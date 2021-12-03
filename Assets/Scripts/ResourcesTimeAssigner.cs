@@ -21,6 +21,7 @@ public class ResourcesTimeAssigner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CurrentDate.text = date.ToString();
         balance = 10000;
         expenses = 200;
         BalanceText = GameObject.Find("FieldBalance").GetComponent(typeof(Text)) as Text;
