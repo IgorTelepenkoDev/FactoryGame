@@ -20,7 +20,7 @@ public class EventManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!timeIsStopped)
+     //   if (!timeIsStopped)
             foreach (var availablEvent in nextFactoryEvents)
             {
                 if (availablEvent.TriggerCondition())
@@ -33,7 +33,7 @@ public class EventManager : MonoBehaviour
     void ActivateEvent(FactoryEvent startedEvent)
     {
         currentEvent = startedEvent;
-        Text title
+        //Text title
     }
 
     public void AcceptEvent()

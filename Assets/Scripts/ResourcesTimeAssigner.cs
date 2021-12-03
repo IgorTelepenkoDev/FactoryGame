@@ -18,6 +18,8 @@ public class ResourcesTimeAssigner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        var bTextObj = GameObject.Find("FieldBalance");
+        BalanceText = bTextObj.GetComponent(typeof(Text)) as Text;
         //  var balanceText = GameObject.Find("FieldBalance");
         //   balanceText.text = "123";
         timer = StartCoroutine(Timer());
