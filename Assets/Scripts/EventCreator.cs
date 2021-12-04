@@ -59,7 +59,10 @@ public static class EventCreator
             expressions.Add(Expression.Lambda<Func<bool>>(exp));
         }
 
-        var finalExpression = expressions.Aggregate(expressions[0], (acc, i) => Expression.Lambda<Func<bool>>(Expression.And(acc, i))).Compile();
+        var firstExpression = expressions[0];
+        expressions.RemoveAt(0);
+
+        var finalExpression = expressions.Aggregate(firstExpression, (acc, i) => Expression.Lambda<Func<bool>>(Expression.And(acc, i))).Compile();
 
         return finalExpression;
     }
