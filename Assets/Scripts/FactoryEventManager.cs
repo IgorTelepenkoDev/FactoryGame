@@ -79,7 +79,12 @@ public class FactoryEventManager : MonoBehaviour
             return;
         }
         
-        NextEvents = Events.Where(x => currentEvent.Accepted.NextEventIDs.Contains(x.ID)).ToList();
+        if(currentEvent.Accepted.NextEventIDs.Count != 0)
+            NextEvents.AddRange(Events.Where(x => currentEvent.Accepted.NextEventIDs.Contains(x.ID)));
+
+        NextEvents.Remove(NextEvents.Where(x => x.ID == currentEvent.ID).First());
+
+        NextEvents.Select(x => x.ID).ToList().ForEach(x => Debug.Log(x));
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Balance += currentEvent.Accepted.BalanceChange;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Expenses += currentEvent.Accepted.ExpensesChange;
@@ -96,8 +101,12 @@ public class FactoryEventManager : MonoBehaviour
             isEventActive = false;
             return;
         }
-        
-        NextEvents = Events.Where(x => currentEvent.Rejected.NextEventIDs.Contains(x.ID)).ToList();
+        if (currentEvent.Accepted.NextEventIDs.Count != 0)
+            NextEvents.AddRange(Events.Where(x => currentEvent.Rejected.NextEventIDs.Contains(x.ID)));
+
+        NextEvents.Remove(NextEvents.Where(x => x.ID == currentEvent.ID).First());
+
+        NextEvents.Select(x => x.ID).ToList().ForEach(x => Debug.Log(x));
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Balance += currentEvent.Rejected.BalanceChange;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Expenses += currentEvent.Rejected.ExpensesChange;

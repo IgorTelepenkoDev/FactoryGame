@@ -52,16 +52,16 @@ public static class EventCreator
                 x = Expression.Constant(resourceTimeAssigner.Balance);
             else if (check.Field == "Expenses")
                 x = Expression.Constant(resourceTimeAssigner.Expenses);
-            else if (check.Field == "Climate") 
-                x = Expression.Constant(resourceTimeAssigner.Climate);
+            else if (check.Field == "Climate")
+                x = Expression.Constant(resourceTimeAssigner.GetClimateBarValue());
 
             y = Expression.Constant(check.Value);
 
-            if (check.Operation == ">")
+            if (check.Operator == ">")
                 exp = Expression.GreaterThan(x, y);
-            else if (check.Operation == "<")
+            else if (check.Operator == "<")
                 exp = Expression.LessThan(x, y);
-            else if (check.Operation == "=")
+            else if (check.Operator == "=")
                 exp = Expression.Equal(x, y);
 
             expressions.Add(Expression.Lambda<Func<bool>>(exp));

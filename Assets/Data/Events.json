@@ -126,7 +126,7 @@
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
-                "3"
+                "3_2_2"
             ]
         }
     
@@ -198,7 +198,7 @@
             "ExpensesChange" : 0,
             "ClimateChange" : -2,
             "NextEventIDs" : [
-                 
+                 "5", "0_1"
             ]
         },
         
@@ -207,7 +207,7 @@
             "ExpensesChange" : 0,
             "ClimateChange" : 5,
             "NextEventIDs" : [ 
-               "4_2", "0_1"
+               "5", "4_2", "0_1"
             ]
         }
     
@@ -225,7 +225,7 @@
             "ExpensesChange" : 40,
             "ClimateChange" : 0,
             "NextEventIDs" : [
-               "5"  
+                
             ]
         },
         
@@ -241,7 +241,7 @@
     }, {
         "ID" : "0_1",
         "Title" : "First Signs",
-        "Description" : "Due to increased temperatures, rivers in tropical regions started to dry off, which decreased the effectiveness of hydroelectric power stations has decreased. More people have to rely on our power stations.\n-40 Expense",
+        "Description" : "Due to increased temperatures, rivers in tropical regions started to dry off, which decreased the effectiveness of hydroelectric power stations. More people have to rely on our power stations.\n-40 Expense",
         "TriggerCondition" : {
             "Date" : "02.2024",
             "Checks" : [{

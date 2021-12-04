@@ -10,7 +10,7 @@ namespace Assets.Scripts.Models
     public class Check
     {
         public string Field { get; set; }
-        public string Operation { get; set; }
+        public string Operator { get; set; }
         public int Value { get; set; }
     }
 

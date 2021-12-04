@@ -17,7 +17,7 @@ public class ResourcesTimeAssigner : MonoBehaviour
     public int Climate { get; set; }
 
     public bool isPaused = false;
-    public float timeUnit = 2f;
+    public float timeUnit = 1f;
 
     private Coroutine timer;
     private GameObject climateChangeBar;
@@ -25,15 +25,15 @@ public class ResourcesTimeAssigner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        climateChangeBar = GameObject.Find("ClimateBarInner");
         Balance = 10000;
         Expenses = 200;
-        //ChangeClimateBarValue(15);
-
-        BalanceText = GameObject.Find("FieldBalance").GetComponent(typeof(Text)) as Text;
-        CurrentDate = GameObject.Find("FieldDate").GetComponent(typeof(Text)) as Text;
-        ExpensesText = GameObject.Find("FieldMonthExpenses").GetComponent(typeof(Text)) as Text;
-        climateChangeBar = GameObject.Find("ClimateBarInner");
         CurrentDate.text = Date.ToString();
+
+        ChangeClimateBarValue(15);
+        ExpensesText = GameObject.Find("FieldMonthExpenses").GetComponent(typeof(Text)) as Text;
+        CurrentDate = GameObject.Find("FieldDate").GetComponent(typeof(Text)) as Text;
+        BalanceText = GameObject.Find("FieldBalance").GetComponent(typeof(Text)) as Text;
 
         timer = StartCoroutine(Timer());
     }
@@ -57,9 +57,9 @@ public class ResourcesTimeAssigner : MonoBehaviour
         ExpensesText.text = Expenses.ToString();
     }
 
-    IEnumerator Timer(float countTime = 1f)
+    IEnumerator Timer(float countTime = 0.5f)
     {
-        countTime = timeUnit;
+        //countTime = timeUnit;
         while(true)
         {
             yield return new WaitForSeconds(countTime);
