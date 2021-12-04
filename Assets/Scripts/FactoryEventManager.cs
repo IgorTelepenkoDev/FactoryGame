@@ -35,6 +35,9 @@ public class FactoryEventManager : MonoBehaviour
 
     void ActivateEvent(FactoryEvent startedEvent)
     {
+        if (startedEvent == null)
+            return;
+
         currentEvent = startedEvent;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StopTime();
 
@@ -49,6 +52,9 @@ public class FactoryEventManager : MonoBehaviour
 
     public void AcceptEvent()
     {
+        if (currentEvent == null)
+            return;
+
         nextFactoryEvents = currentEvent.NextEventsIfAccepted;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().balance += currentEvent.
             BalanceChangeIfAccepted;
@@ -61,6 +67,9 @@ public class FactoryEventManager : MonoBehaviour
 
     public void RejectEvent()
     {
+        if (currentEvent == null)
+            return;
+
         nextFactoryEvents = currentEvent.NextEventsIfRejected;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().balance += currentEvent.
             BalanceChangeIfRejected;
