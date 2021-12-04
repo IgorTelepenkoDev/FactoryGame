@@ -9,6 +9,7 @@ TagManager:
   - MenuPanel
   - FactoryEventManager
   - PausePanel
+  - GameOverPanel
   layers:
   - Default
   - TransparentFX

@@ -22,7 +22,7 @@ public class ResourcesTimeAssigner : MonoBehaviour
     private Coroutine timer;
     private GameObject climateChangeBar;
 
-    private GameObject UIElemCOntroller;
+    private GameObject UIElemController;
 
     // Start is called before the first frame update
     void Start()
@@ -32,13 +32,12 @@ public class ResourcesTimeAssigner : MonoBehaviour
         Expenses = 200;
         CurrentDate.text = Date.ToString();
 
-        ChangeClimateBarValue(15);
         ExpensesText = GameObject.Find("FieldMonthExpenses").GetComponent(typeof(Text)) as Text;
         CurrentDate = GameObject.Find("FieldDate").GetComponent(typeof(Text)) as Text;
         BalanceText = GameObject.Find("FieldBalance").GetComponent(typeof(Text)) as Text;
 
         climateChangeBar = GameObject.Find("ClimateBarInner");
-        UIElemCOntroller = GameObject.Find("UiController");
+        UIElemController = GameObject.Find("UiController");
 
         timer = StartCoroutine(Timer());
     }
@@ -48,7 +47,7 @@ public class ResourcesTimeAssigner : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            UIElemCOntroller.GetComponent<UiElementsController>().Pause();
+            UIElemController.GetComponent<UiElementsController>().Pause();
         }
 
         BalanceText.text = Balance.ToString();
@@ -65,6 +64,16 @@ public class ResourcesTimeAssigner : MonoBehaviour
             Date = Date.AddMonths(1);
             CurrentDate.text = Date.ToString();
             Balance -= Expenses;
+
+            CheckForGameOver();
+        }
+    }
+
+    public void CheckForGameOver()
+    {
+        if (Balance <= 0 || GetClimateBarValue() >= 100)
+        {
+            UIElemController.GetComponent<UiElementsController>().ActivateGameOverPanel();
         }
     }
 

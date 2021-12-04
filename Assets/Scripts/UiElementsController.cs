@@ -12,6 +12,9 @@ public class UiElementsController : MonoBehaviour
     private CanvasGroup canvasGroupPause;
     private bool isPausedByButton = false;
 
+    private GameObject displayedGameOverPanel;
+    private CanvasGroup canvasGroupGameOver;
+
     private GameObject resourceTimeManager;
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,9 @@ public class UiElementsController : MonoBehaviour
 
         displayedPausePanel = GameObject.FindGameObjectWithTag("PausePanel");
         canvasGroupPause = displayedPausePanel.GetComponent(typeof(CanvasGroup)) as CanvasGroup;
+
+        displayedGameOverPanel = GameObject.FindGameObjectWithTag("GameOverPanel");
+        canvasGroupGameOver = displayedGameOverPanel.GetComponent(typeof(CanvasGroup)) as CanvasGroup;
     }
 
     // Update is called once per frame
@@ -65,6 +71,11 @@ public class UiElementsController : MonoBehaviour
             resourceTimeManager.GetComponent<ResourcesTimeAssigner>().StopTime();
             DialogBoxShow(canvasGroupPause);
         }
+    }
+
+    public void ActivateGameOverPanel()
+    {
+        DialogBoxShow(canvasGroupGameOver);
     }
 
     public void DialogBoxShow(CanvasGroup canvasGroupElem)
