@@ -707,14 +707,14 @@
     
         "Accepted" : {
             "BalanceChange" : 1500,
-            "ExpensesChange" : 20,
+            "ExpensesChange" : -20,
             "ClimateChange" : -10,
             "NextEventIDs" : ["11"]
         },
         
         "Rejected" : {
             "BalanceChange" : 1500,
-            "ExpensesChange" : 20,
+            "ExpensesChange" : -20,
             "ClimateChange" : -10,
             "NextEventIDs" : ["11"]
         }
@@ -739,7 +739,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventIDs" : []
+            "NextEventIDs" : ["12"]
         }
     
     }, {
@@ -780,14 +780,14 @@
     
         "Accepted" : {
             "BalanceChange" : -2000,
-            "ExpensesChange" : -10,
+            "ExpensesChange" : -25,
             "ClimateChange" : 0,
             "NextEventIDs" : []
         },
         
         "Rejected" : {
             "BalanceChange" : -2000,
-            "ExpensesChange" : -10,
+            "ExpensesChange" : -25,
             "ClimateChange" : 0,
             "NextEventIDs" : []
         }
@@ -803,7 +803,7 @@
     
         "Accepted" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 20,
+            "ExpensesChange" : 10,
             "ClimateChange" : 30,
             "NextEventIDs" : ["13"]
         },
@@ -872,7 +872,7 @@
     
         "Accepted" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : -25,
+            "ExpensesChange" : -60,
             "ClimateChange" : 15,
             "NextEventIDs" : ["14_1_1"]
         },
@@ -918,14 +918,14 @@
     
         "Accepted" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 25,
+            "ExpensesChange" : 15,
             "ClimateChange" : -10,
             "NextEventIDs" : ["15"]
         },
         
         "Rejected" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 25,
+            "ExpensesChange" : 15,
             "ClimateChange" : -10,
             "NextEventIDs" : ["15"]
         }
@@ -964,14 +964,14 @@
     
         "Accepted" : {
             "BalanceChange" : -500,
-            "ExpensesChange" : 30,
+            "ExpensesChange" : 20,
             "ClimateChange" : -10,
             "NextEventIDs" : ["16"]
         },
         
         "Rejected" : {
             "BalanceChange" : -500,
-            "ExpensesChange" : 30,
+            "ExpensesChange" : 20,
             "ClimateChange" : -10,
             "NextEventIDs" : ["16"]
         }
@@ -1060,14 +1060,14 @@
     
         "Accepted" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 30,
+            "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : ["17"]
         },
         
         "Rejected" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 30,
+            "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : ["17"]
         }
