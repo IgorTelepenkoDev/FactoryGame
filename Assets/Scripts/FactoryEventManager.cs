@@ -18,6 +18,8 @@ public class FactoryEventManager : MonoBehaviour
 
     private GameObject ResourcesTimeManager;
 
+    public bool isEventActive = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,7 @@ public class FactoryEventManager : MonoBehaviour
 
         Events = EventCreator.LoadEvents();
         if (Events != null)
+
             NextEvents = new List<GameEvent> { Events[0] };
     }
 
@@ -34,12 +37,15 @@ public class FactoryEventManager : MonoBehaviour
     void Update()
     {
         if (!ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().isPaused && NextEvents != null)
-            foreach (var availablEvent in NextEvents)
+            foreach (var availableEvent in NextEvents)
             {
-                var triggerCondition = EventCreator.CreateTriggerCondition(availablEvent.TriggerCondition);
+                
+                var triggerCondition = EventCreator.CreateTriggerCondition(availableEvent.TriggerCondition);
 
                 if (triggerCondition())
-                    ActivateEvent(availablEvent);
+                {
+                    ActivateEvent(availableEvent);
+                }
             }
     }
 
@@ -62,12 +68,17 @@ public class FactoryEventManager : MonoBehaviour
             GetComponent(typeof(Text)) as Text;
 
         eventDescriptionField.text = startedEvent.Description;
+        Debug.Log(currentEvent);
+        isEventActive = true;
     }
 
     public void AcceptEvent()
     {
         if (currentEvent == null)
+        {
+            isEventActive = false;
             return;
+        }
         
         NextEvents.AddRange(Events.Where(x => currentEvent.Accepted.NextEventIDs.Contains(x.ID)));
 
@@ -76,12 +87,16 @@ public class FactoryEventManager : MonoBehaviour
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().ChangeClimateBarValue(currentEvent.Accepted.ClimateChange);
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StartTime();
+        isEventActive = false;
     }
 
     public void RejectEvent()
     {
         if (currentEvent == null)
+        {
+            isEventActive = false;
             return;
+        }
         
         NextEvents.AddRange(Events.Where(x => currentEvent.Rejected.NextEventIDs.Contains(x.ID)));
 
@@ -90,5 +105,6 @@ public class FactoryEventManager : MonoBehaviour
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().ChangeClimateBarValue(currentEvent.Rejected.ClimateChange);
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StartTime();
+        isEventActive = false;
     }
 }
