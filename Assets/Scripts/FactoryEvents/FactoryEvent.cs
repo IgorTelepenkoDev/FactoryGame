@@ -18,6 +18,9 @@ namespace Assets.Scripts.FactoryEvents
         public int BalanceChangeIfRejected { get; set; }
         public int ExpensesChangeIfRejected { get; set; }
 
+        public int ClimateChangeIfAccepted { get; set; }
+        public int ClimateChangeIfRejected { get; set; }
+
         public List<FactoryEvent> NextEventsIfAccepted { get; set; }
         public List<FactoryEvent> NextEventsIfRejected { get; set; }
     }
