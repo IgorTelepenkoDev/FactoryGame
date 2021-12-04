@@ -24,6 +24,7 @@ namespace Assets.Scripts.Models
     {
         public int BalanceChange { get; set; }
         public int ExpensesChange { get; set; }
+        public int ClimateChange { get; set; }
         public string NextEventID { get; set; }
     }
 
@@ -31,6 +32,7 @@ namespace Assets.Scripts.Models
     {
         public int BalanceChange { get; set; }
         public int ExpensesChange { get; set; }
+        public int ClimateChange { get; set; }
         public string NextEventID { get; set; }
     }
 
