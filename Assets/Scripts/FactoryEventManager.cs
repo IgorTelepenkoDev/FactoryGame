@@ -18,7 +18,7 @@ public class FactoryEventManager : MonoBehaviour
 
     private GameObject ResourcesTimeManager;
 
-    public bool isEventActive = true;
+    public bool isEventActive = false;
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +44,6 @@ public class FactoryEventManager : MonoBehaviour
 
                 if (triggerCondition())
                 {
-                    Debug.Log("123");
                     ActivateEvent(availableEvent);
                 }
             }
@@ -69,15 +68,17 @@ public class FactoryEventManager : MonoBehaviour
             GetComponent(typeof(Text)) as Text;
 
         eventDescriptionField.text = startedEvent.Description;
-        Debug.Log(isEventActive);
+        Debug.Log(currentEvent);
         isEventActive = true;
     }
 
     public void AcceptEvent()
     {
-        Debug.Log(currentEvent);
         if (currentEvent == null)
+        {
+            isEventActive = false;
             return;
+        }
         // change to return a list of next events, not just one
         NextEvents.Add(Events.Where(x => x.ID == currentEvent.Accepted.NextEventID).First());
 
@@ -87,13 +88,15 @@ public class FactoryEventManager : MonoBehaviour
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StartTime();
         isEventActive = false;
-        Debug.Log("123");
     }
 
     public void RejectEvent()
     {
         if (currentEvent == null)
+        {
+            isEventActive = false;
             return;
+        }
         // change to return a list of next events, not just one
         NextEvents.Add(Events.Where(x => x.ID == currentEvent.Rejected.NextEventID).First());
 
@@ -103,6 +106,5 @@ public class FactoryEventManager : MonoBehaviour
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StartTime();
         isEventActive = false;
-        Debug.Log("123");
     }
 }

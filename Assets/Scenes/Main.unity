@@ -577,6 +577,7 @@ GameObject:
   - component: {fileID: 188845639}
   - component: {fileID: 188845641}
   - component: {fileID: 188845640}
+  - component: {fileID: 188845642}
   m_Layer: 5
   m_Name: DialogBoxPanel
   m_TagString: PanelFactoryEvent
@@ -645,6 +646,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188845638}
   m_CullTransparentMesh: 1
+--- !u!225 &188845642
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188845638}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &210873888
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,7 +670,7 @@ GameObject:
   - component: {fileID: 210873890}
   m_Layer: 0
   m_Name: FactoryEventManager
-  m_TagString: Untagged
+  m_TagString: FactoryEventManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -688,6 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114d74800f1d019468887827a48a8d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEventActive: 0
 --- !u!1 &228265766
 GameObject:
   m_ObjectHideFlags: 0
@@ -2685,7 +2699,6 @@ MonoBehaviour:
   CurrentDate: {fileID: 922810404}
   ExpensesText: {fileID: 0}
   ClimateText: {fileID: 0}
-  sDate: 
   isPaused: 0
   timeUnit: 2
 --- !u!1 &2002782754
