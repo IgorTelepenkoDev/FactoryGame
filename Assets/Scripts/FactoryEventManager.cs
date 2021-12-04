@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Assets.Scripts.FactoryEvents;
+using Assets.Scripts.Models;
+using System.Linq;
+using System;
 
 public class FactoryEventManager : MonoBehaviour
 {
-    private List<FactoryEvent> nextFactoryEvents;
-    private FactoryEvent currentEvent = null;
+    public List<GameEvent> Events;
+
+    private List<GameEvent> NextEvents;
+    private GameEvent currentEvent = null;
 
     private GameObject displayedEventPanel;
 
@@ -19,21 +24,24 @@ public class FactoryEventManager : MonoBehaviour
         // Assign default event to the list
         displayedEventPanel = GameObject.FindGameObjectWithTag("PanelFactoryEvent");
         ResourcesTimeManager = GameObject.FindGameObjectWithTag("ResourcesTimeManager");
+
+        Events = EventCreator.LoadEvents();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().isPaused)
-            if(nextFactoryEvents != null)
-                foreach (var availablEvent in nextFactoryEvents)
-                {
-                    if (availablEvent.TriggerCondition())
-                        ActivateEvent(availablEvent);
-                }
+        if (!ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().isPaused && NextEvents != null)
+            foreach (var availablEvent in NextEvents)
+            {
+                Func<bool> triggerCondition = EventCreator.CreateTriggerCondition(availablEvent.TriggerCondition);
+
+                if (triggerCondition())
+                    ActivateEvent(availablEvent);
+            }
     }
 
-    void ActivateEvent(FactoryEvent startedEvent)
+    void ActivateEvent(GameEvent startedEvent)
     {
         if (startedEvent == null)
             return;
@@ -41,12 +49,16 @@ public class FactoryEventManager : MonoBehaviour
         currentEvent = startedEvent;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StopTime();
 
-        var eventTitleField = displayedEventPanel.transform.Find("EventTitle").
+        var eventTitleField = displayedEventPanel.transform.
+            Find("EventTitle").
             GetComponent(typeof(Text)) as Text;
+
         eventTitleField.text = startedEvent.Title;
 
-        var eventDescriptionField = displayedEventPanel.transform.Find("TextEventDescription").
+        var eventDescriptionField = displayedEventPanel.transform.
+            Find("TextEventDescription").
             GetComponent(typeof(Text)) as Text;
+
         eventDescriptionField.text = startedEvent.Description;
     }
 
@@ -55,12 +67,10 @@ public class FactoryEventManager : MonoBehaviour
         if (currentEvent == null)
             return;
 
-        nextFactoryEvents = currentEvent.NextEventsIfAccepted;
-        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().balance += currentEvent.
-            BalanceChangeIfAccepted;
-        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().expenses += currentEvent.
-            ExpensesChangeIfAccepted;
-        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().ChangeClimateBarValue(currentEvent.BalanceChangeIfAccepted);
+        NextEvents.Add(Events.Where(x => x.ID == currentEvent.Accepted.NextEventID).First());
+
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().balance += currentEvent.Accepted.BalanceChange;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().expenses += currentEvent.Accepted.ExpensesChange;
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StartTime();
     }
@@ -70,12 +80,10 @@ public class FactoryEventManager : MonoBehaviour
         if (currentEvent == null)
             return;
 
-        nextFactoryEvents = currentEvent.NextEventsIfRejected;
-        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().balance += currentEvent.
-            BalanceChangeIfRejected;
-        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().expenses += currentEvent.
-            ExpensesChangeIfRejected;
-        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().ChangeClimateBarValue(currentEvent.BalanceChangeIfRejected);
+        NextEvents.Add(Events.Where(x => x.ID == currentEvent.Rejected.NextEventID).First());
+
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().balance += currentEvent.Rejected.BalanceChange;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().expenses += currentEvent.Rejected.ExpensesChange;
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StartTime();
     }
