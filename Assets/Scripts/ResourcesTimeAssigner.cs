@@ -87,7 +87,7 @@ public class ResourcesTimeAssigner : MonoBehaviour
     {
         var climateChangeBarValueOffset = 
             climateChangeBar.GetComponent<RectTransform>().offsetMax.x + climateChangeRate;
-        Debug.Log("offst = " + climateChangeBarValueOffset);
+        
         if (climateChangeBarValueOffset > 0)
             climateChangeBarValueOffset = 0;
         if (climateChangeBarValueOffset < -100)

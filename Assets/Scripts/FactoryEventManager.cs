@@ -29,7 +29,6 @@ public class FactoryEventManager : MonoBehaviour
 
         Events = EventCreator.LoadEvents();
         if (Events != null)
-
             NextEvents = new List<GameEvent> { Events[0] };
     }
 
@@ -80,7 +79,7 @@ public class FactoryEventManager : MonoBehaviour
             return;
         }
         
-        NextEvents.AddRange(Events.Where(x => currentEvent.Accepted.NextEventIDs.Contains(x.ID)));
+        NextEvents = Events.Where(x => currentEvent.Accepted.NextEventIDs.Contains(x.ID)).ToList();
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Balance += currentEvent.Accepted.BalanceChange;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Expenses += currentEvent.Accepted.ExpensesChange;
@@ -98,7 +97,7 @@ public class FactoryEventManager : MonoBehaviour
             return;
         }
         
-        NextEvents.AddRange(Events.Where(x => currentEvent.Rejected.NextEventIDs.Contains(x.ID)));
+        NextEvents = Events.Where(x => currentEvent.Rejected.NextEventIDs.Contains(x.ID)).ToList();
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Balance += currentEvent.Rejected.BalanceChange;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Expenses += currentEvent.Rejected.ExpensesChange;
