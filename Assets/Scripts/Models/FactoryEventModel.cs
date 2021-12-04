@@ -25,7 +25,7 @@ namespace Assets.Scripts.Models
         public int BalanceChange { get; set; }
         public int ExpensesChange { get; set; }
         public int ClimateChange { get; set; }
-        public string NextEventID { get; set; }
+        public List<string> NextEventIDs { get; set; }
     }
 
     public class Rejected
@@ -33,7 +33,7 @@ namespace Assets.Scripts.Models
         public int BalanceChange { get; set; }
         public int ExpensesChange { get; set; }
         public int ClimateChange { get; set; }
-        public string NextEventID { get; set; }
+        public List<string> NextEventIDs { get; set; }
     }
 
     public class GameEvent

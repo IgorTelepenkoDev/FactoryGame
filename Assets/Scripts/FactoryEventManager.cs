@@ -68,8 +68,8 @@ public class FactoryEventManager : MonoBehaviour
     {
         if (currentEvent == null)
             return;
-        // change to return a list of next events, not just one
-        NextEvents.Add(Events.Where(x => x.ID == currentEvent.Accepted.NextEventID).First());
+        
+        NextEvents.AddRange(Events.Where(x => currentEvent.Accepted.NextEventIDs.Contains(x.ID)));
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Balance += currentEvent.Accepted.BalanceChange;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Expenses += currentEvent.Accepted.ExpensesChange;
@@ -82,8 +82,8 @@ public class FactoryEventManager : MonoBehaviour
     {
         if (currentEvent == null)
             return;
-        // change to return a list of next events, not just one
-        NextEvents.Add(Events.Where(x => x.ID == currentEvent.Rejected.NextEventID).First());
+        
+        NextEvents.AddRange(Events.Where(x => currentEvent.Rejected.NextEventIDs.Contains(x.ID)));
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Balance += currentEvent.Rejected.BalanceChange;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Expenses += currentEvent.Rejected.ExpensesChange;
