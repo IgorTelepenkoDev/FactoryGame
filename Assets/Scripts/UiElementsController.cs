@@ -19,6 +19,9 @@ public class UiElementsController : MonoBehaviour
     private GameObject displayGameWinPanel;
     private CanvasGroup canvasGroupGameWin;
 
+    private GameObject displayMenuPanel;
+    private CanvasGroup canvasGroupMenu;
+
     private GameObject resourceTimeManager;
     // Start is called before the first frame update
     void Start()
@@ -37,6 +40,9 @@ public class UiElementsController : MonoBehaviour
 
         displayGameWinPanel = GameObject.FindGameObjectWithTag("GameWinPanel");
         canvasGroupGameWin = displayGameWinPanel.GetComponent(typeof(CanvasGroup)) as CanvasGroup;
+
+        displayMenuPanel = GameObject.FindGameObjectWithTag("MenuPanel");
+        canvasGroupMenu = displayMenuPanel.GetComponent(typeof(CanvasGroup)) as CanvasGroup;
     }
 
     // Update is called once per frame
@@ -55,13 +61,14 @@ public class UiElementsController : MonoBehaviour
 
     public void ActivateMenu()
     {
-        var menuPanel = GameObject.FindGameObjectWithTag("MenuPanel");
-
-        //change to animation
-        if (menuPanel.activeSelf == false)
-            menuPanel.SetActive(true);
+        if(canvasGroupMenu.alpha == 0)
+        {
+            DialogBoxShow(canvasGroupMenu);
+        }
         else
-            menuPanel.SetActive(false);
+        {
+            DialogBoxHide(canvasGroupMenu);
+        }
     }
 
     public void Pause()
