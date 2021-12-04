@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class UiElementsController : MonoBehaviour
 {
-    bool isEventActive;
     private GameObject factoryEventManager;
     private GameObject displayedEventPanel;
-    private CanvasGroup canvasGroup;
+    private CanvasGroup canvasGroupEventPanel;
+
+    private GameObject displayedPausePanel;
+    private CanvasGroup canvasGroupPause;
+    private bool isPausedByButton = false;
+
+    private GameObject resourceTimeManager;
     // Start is called before the first frame update
     void Start()
     {
         displayedEventPanel = GameObject.FindGameObjectWithTag("PanelFactoryEvent");
-        canvasGroup = displayedEventPanel.GetComponent(typeof(CanvasGroup)) as CanvasGroup;
+        canvasGroupEventPanel = displayedEventPanel.GetComponent(typeof(CanvasGroup)) as CanvasGroup;
         factoryEventManager = GameObject.FindGameObjectWithTag("FactoryEventManager");
-        
 
+        resourceTimeManager = GameObject.FindGameObjectWithTag("ResourcesTimeManager");
+
+        displayedPausePanel = GameObject.FindGameObjectWithTag("PausePanel");
+        canvasGroupPause = displayedPausePanel.GetComponent(typeof(CanvasGroup)) as CanvasGroup;
     }
 
     // Update is called once per frame
@@ -23,13 +31,11 @@ public class UiElementsController : MonoBehaviour
     {
         if(factoryEventManager.GetComponent<FactoryEventManager>().isEventActive)
        {
-            canvasGroup.alpha = 1;
-            canvasGroup.blocksRaycasts = true;
+            DialogBoxShow(canvasGroupEventPanel);
         }
        else
        {
-           canvasGroup.alpha = 0;
-           canvasGroup.blocksRaycasts = false;
+           DialogBoxHide(canvasGroupEventPanel);
         }
 
     }
@@ -45,13 +51,31 @@ public class UiElementsController : MonoBehaviour
             menuPanel.SetActive(false);
     }
 
-    public void DialogBoxShow()
+    public void Pause()
     {
-        canvasGroup.alpha = 1;
+        if(isPausedByButton == true)
+        {
+            isPausedByButton = false;
+            resourceTimeManager.GetComponent<ResourcesTimeAssigner>().StartTime();
+            DialogBoxHide(canvasGroupPause);
+        }
+        else
+        {
+            isPausedByButton = true;
+            resourceTimeManager.GetComponent<ResourcesTimeAssigner>().StopTime();
+            DialogBoxShow(canvasGroupPause);
+        }
     }
 
-    public void DialogBoxHide()
+    public void DialogBoxShow(CanvasGroup canvasGroupElem)
     {
-        canvasGroup.alpha = 0;
+        canvasGroupElem.alpha = 1;
+        canvasGroupElem.blocksRaycasts = true;
+    }
+
+    public void DialogBoxHide(CanvasGroup canvasGroupElem)
+    {
+        canvasGroupElem.alpha = 0;
+        canvasGroupElem.blocksRaycasts = false;
     }
 }
