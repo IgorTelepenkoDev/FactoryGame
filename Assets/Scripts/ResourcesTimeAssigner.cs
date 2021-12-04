@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Globalization;
 
 public class ResourcesTimeAssigner : MonoBehaviour
 {
@@ -62,7 +63,7 @@ public class ResourcesTimeAssigner : MonoBehaviour
             yield return new WaitForSeconds(countTime);
 
             Date = Date.AddMonths(1);
-            CurrentDate.text = Date.ToString();
+            CurrentDate.text = Date.ToString("MMM/yyyy", new CultureInfo("en-US"));
             Balance -= Expenses;
 
             CheckForGameWin();

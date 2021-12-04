@@ -1798,7 +1798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -842.9667, y: -470.8237}
+  m_AnchoredPosition: {x: -842.9667, y: -493}
   m_SizeDelta: {x: 98.30878, y: 22.881805}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &760122350
@@ -2322,7 +2322,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -514, y: -493}
+  m_AnchoredPosition: {x: -543, y: -493}
   m_SizeDelta: {x: 98.30878, y: 22.881805}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &922810404
@@ -2417,7 +2417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -180.1, y: -157}
+  m_AnchoredPosition: {x: -187, y: -157}
   m_SizeDelta: {x: 98.30878, y: 22.881805}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1155239758
@@ -2453,9 +2453,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Climate
-
-'
+  m_Text: Pollution
 --- !u!222 &1155239759
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2760,7 +2758,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Day
+  m_Text: 'Date
+
+'
 --- !u!222 &1309876048
 CanvasRenderer:
   m_ObjectHideFlags: 0
