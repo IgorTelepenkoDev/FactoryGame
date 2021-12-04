@@ -38,9 +38,9 @@ public static class EventCreator
         var jsonTime = Convert.ToDateTime(condition.Date);
 
         if(curTime < jsonTime)
-        {
             return () => false;
-        }
+        else if (condition.Checks.Count == 0)
+            return () => true;
 
         foreach (var check in condition.Checks)
         {
