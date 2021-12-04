@@ -22,6 +22,8 @@ public class ResourcesTimeAssigner : MonoBehaviour
     private Coroutine timer;
     private GameObject climateChangeBar;
 
+    private GameObject UIElemCOntroller;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,9 @@ public class ResourcesTimeAssigner : MonoBehaviour
         CurrentDate = GameObject.Find("FieldDate").GetComponent(typeof(Text)) as Text;
         BalanceText = GameObject.Find("FieldBalance").GetComponent(typeof(Text)) as Text;
 
+        climateChangeBar = GameObject.Find("ClimateBarInner");
+        UIElemCOntroller = GameObject.Find("UiController");
+
         timer = StartCoroutine(Timer());
     }
 
@@ -43,14 +48,7 @@ public class ResourcesTimeAssigner : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            if (isPaused)
-            {
-                StartTime();
-            }
-            else
-            {
-                StopTime();
-            }    
+            UIElemCOntroller.GetComponent<UiElementsController>().Pause();
         }
 
         BalanceText.text = Balance.ToString();
