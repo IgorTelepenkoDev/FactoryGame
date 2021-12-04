@@ -133,7 +133,7 @@
     }, {
         "ID" : "3_2_1",
         "Title" : "New Regulation",
-        "Description" : "Bribe was successful, but you had to pay a lot of money.\n- 600 balance.",
+        "Description" : "Bribe was successful, but you had to pay a lot of money.\n- 200 balance.",
         "TriggerCondition" : {
             "Date" : "06.2024",
             "Checks" : [ ]
@@ -160,7 +160,7 @@
     }, {
         "ID" : "3_2_2",
         "Title" : "New Regulation",
-        "Description" : "You pay a fine and are forced to install the filters.\n-400 Balance, +20 Expenses",
+        "Description" : "You pay a fine and are forced to install the filters.\n-100 Balance, +20 Expenses",
         "TriggerCondition" : {
             "Date" : "06.2024",
             "Checks" : [ ]
@@ -168,7 +168,7 @@
     
         "Accepted" : {
             "BalanceChange" : -100,
-            "ExpensesChange" : 10,
+            "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : [
                  
@@ -177,7 +177,7 @@
         
         "Rejected" : {
             "BalanceChange" : -100,
-            "ExpensesChange" : 10,
+            "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
                 
@@ -194,18 +194,18 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : 0,
+            "BalanceChange" : -200,
             "ExpensesChange" : 0,
-            "ClimateChange" : -5,
+            "ClimateChange" : 15,
             "NextEventIDs" : [
                  "5", "0_1"
             ]
         },
         
         "Rejected" : {
-            "BalanceChange" : -200,
+            "BalanceChange" : 0,
             "ExpensesChange" : 0,
-            "ClimateChange" : 15,
+            "ClimateChange" : -5,
             "NextEventIDs" : [ 
                "5", "4_2", "0_1"
             ]
@@ -279,7 +279,7 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : 500,
+            "BalanceChange" : 1000,
             "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : [
@@ -288,7 +288,7 @@
         },
         
         "Rejected" : {
-            "BalanceChange" : 500,
+            "BalanceChange" : 1000,
             "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
@@ -341,7 +341,7 @@
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : [
-                 "6_1"
+                 "7", "6_1"
             ]
         },
         
@@ -350,7 +350,7 @@
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
-                "6_2"
+                "7" ,"6_2"
             ]
         }
     
@@ -368,7 +368,7 @@
             "ExpensesChange" : 80,
             "ClimateChange" : 0,
             "NextEventIDs" : [
-                 "7"
+                 
             ]
         },
         
@@ -377,7 +377,7 @@
             "ExpensesChange" : 80,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
-                "7"
+                
             ]
         }
     
@@ -422,7 +422,7 @@
             "ExpensesChange" : 150,
             "ClimateChange" : 0,
             "NextEventIDs" : [
-                 "7"
+                 
             ]
         },
         
@@ -431,7 +431,34 @@
             "ExpensesChange" : 150,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
-                "7"
+                
+            ]
+        }
+    
+    }, {
+        "ID" : "6_2_2",
+        "Title" : "Tricky Situation",
+        "Description" : "New workers were fired in place of protesting workers. Protester saw that their actions are futile and stopped. We had to pay for a hiring campaign. Also, new workers were unexperienced, so new expenses had to be paid for education. Efficiency decreased",
+        "TriggerCondition" : {
+            "Date" : "04.2025",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -1000,
+            "ExpensesChange" : 25,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                 
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : -1000,
+            "ExpensesChange" : 25,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [ 
+                
             ]
         }
     

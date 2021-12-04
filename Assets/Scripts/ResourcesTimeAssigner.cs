@@ -29,7 +29,7 @@ public class ResourcesTimeAssigner : MonoBehaviour
     {
         climateChangeBar = GameObject.Find("ClimateBarInner");
         Balance = 10000;
-        Expenses = 200;
+        Expenses = 100;
         CurrentDate.text = Date.ToString();
 
         ExpensesText = GameObject.Find("FieldMonthExpenses").GetComponent(typeof(Text)) as Text;
