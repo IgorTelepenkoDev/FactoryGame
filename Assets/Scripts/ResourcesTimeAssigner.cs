@@ -65,6 +65,7 @@ public class ResourcesTimeAssigner : MonoBehaviour
             CurrentDate.text = Date.ToString();
             Balance -= Expenses;
 
+            CheckForGameWin();
             CheckForGameOver();
         }
     }
@@ -75,6 +76,12 @@ public class ResourcesTimeAssigner : MonoBehaviour
         {
             UIElemController.GetComponent<UiElementsController>().ActivateGameOverPanel();
         }
+    }
+
+    public void CheckForGameWin()
+    {
+        if (Expenses <= 0)
+            UIElemController.GetComponent<UiElementsController>().ActivateGameWinPanel();
     }
 
     public void StopTime()

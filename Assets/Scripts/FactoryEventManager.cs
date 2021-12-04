@@ -17,6 +17,7 @@ public class FactoryEventManager : MonoBehaviour
     private GameObject displayedEventPanel;
 
     private GameObject ResourcesTimeManager;
+    private GameObject UiElemController;
 
     public bool isEventActive = false;
 
@@ -26,6 +27,7 @@ public class FactoryEventManager : MonoBehaviour
         // Assign default event to the list
         displayedEventPanel = GameObject.FindGameObjectWithTag("PanelFactoryEvent");
         ResourcesTimeManager = GameObject.FindGameObjectWithTag("ResourcesTimeManager");
+        UiElemController = GameObject.Find("UiController");
 
         Events = EventCreator.LoadEvents();
         if (Events != null)
@@ -38,7 +40,12 @@ public class FactoryEventManager : MonoBehaviour
         if (!ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().isPaused && NextEvents != null)
             foreach (var availableEvent in NextEvents)
             {
-                
+                if (availableEvent == Events.LastOrDefault())
+                {
+                    UiElemController.GetComponent<UiElementsController>().ActivateGameWinPanel();
+                    return;
+                }
+
                 var triggerCondition = EventCreator.CreateTriggerCondition(availableEvent.TriggerCondition);
 
                 if (triggerCondition())

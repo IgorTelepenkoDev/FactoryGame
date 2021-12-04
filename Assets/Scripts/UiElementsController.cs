@@ -16,6 +16,9 @@ public class UiElementsController : MonoBehaviour
     private GameObject displayedGameOverPanel;
     private CanvasGroup canvasGroupGameOver;
 
+    private GameObject displayGameWinPanel;
+    private CanvasGroup canvasGroupGameWin;
+
     private GameObject resourceTimeManager;
     // Start is called before the first frame update
     void Start()
@@ -31,6 +34,9 @@ public class UiElementsController : MonoBehaviour
 
         displayedGameOverPanel = GameObject.FindGameObjectWithTag("GameOverPanel");
         canvasGroupGameOver = displayedGameOverPanel.GetComponent(typeof(CanvasGroup)) as CanvasGroup;
+
+        displayGameWinPanel = GameObject.FindGameObjectWithTag("GameWinPanel");
+        canvasGroupGameWin = displayGameWinPanel.GetComponent(typeof(CanvasGroup)) as CanvasGroup;
     }
 
     // Update is called once per frame
@@ -87,6 +93,12 @@ public class UiElementsController : MonoBehaviour
     public void ActivateGameOverPanel()
     {
         DialogBoxShow(canvasGroupGameOver);
+        resourceTimeManager.GetComponent<ResourcesTimeAssigner>().StopTime();
+    }
+
+    public void ActivateGameWinPanel()
+    {
+        DialogBoxShow(canvasGroupGameWin);
         resourceTimeManager.GetComponent<ResourcesTimeAssigner>().StopTime();
     }
 
