@@ -34,6 +34,14 @@ public static class EventCreator
 
         var expressions = new List<Expression<Func<bool>>>();
 
+        var curTime = resourceTimeAssigner.Date;
+        var jsonTime = Convert.ToDateTime(condition.Date);
+
+        if(curTime < jsonTime)
+        {
+            return () => false;
+        }
+
         foreach (var check in condition.Checks)
         {
             ConstantExpression x = null;
@@ -41,11 +49,11 @@ public static class EventCreator
             BinaryExpression exp = null;
 
             if (check.Field == "Balance") 
-                x = Expression.Constant(resourceTimeAssigner.balance);
+                x = Expression.Constant(resourceTimeAssigner.Balance);
             else if (check.Field == "Expenses")
-                x = Expression.Constant(resourceTimeAssigner.expenses);
+                x = Expression.Constant(resourceTimeAssigner.Expenses);
             else if (check.Field == "Climate") 
-                x = Expression.Constant(resourceTimeAssigner.expenses);
+                x = Expression.Constant(resourceTimeAssigner.Climate);
 
             y = Expression.Constant(check.Value);
 

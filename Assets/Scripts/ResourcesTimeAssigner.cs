@@ -10,28 +10,30 @@ public class ResourcesTimeAssigner : MonoBehaviour
     public Text CurrentDate;
     public Text ExpensesText;
     public Text ClimateText;
-    public DateTime date = DateTime.Now;
-    public string sDate;
-    public int expenses { get; set; }
-    public int balance { get; set; }
-    public int climate { get; set; }
+    public DateTime Date = DateTime.Now;
+
+    public int Expenses { get; set; }
+    public int Balance { get; set; }
+    public int Climate { get; set; }
+
     public bool isPaused = false;
-    Coroutine timer;
     public float timeUnit = 2f;
 
+    private Coroutine timer;
     private GameObject climateChangeBar;
+
     // Start is called before the first frame update
     void Start()
     {
-        CurrentDate.text = date.ToString();
-        balance = 10000;
-        expenses = 200;
+        Balance = 10000;
+        Expenses = 200;
+
         BalanceText = GameObject.Find("FieldBalance").GetComponent(typeof(Text)) as Text;
         CurrentDate = GameObject.Find("FieldDate").GetComponent(typeof(Text)) as Text;
         ExpensesText = GameObject.Find("FieldMonthExpenses").GetComponent(typeof(Text)) as Text;
         climateChangeBar = GameObject.Find("ClimateBarInner");
-        //  var balanceText = GameObject.Find("FieldBalance");
-        //   balanceText.text = "123";
+        CurrentDate.text = Date.ToString();
+
         timer = StartCoroutine(Timer());
     }
 
@@ -47,12 +49,11 @@ public class ResourcesTimeAssigner : MonoBehaviour
             else
             {
                 StopTime();
-            }
-            
+            }    
         }
 
-        BalanceText.text = balance.ToString();
-        ExpensesText.text = expenses.ToString();
+        BalanceText.text = Balance.ToString();
+        ExpensesText.text = Expenses.ToString();
     }
 
     IEnumerator Timer(float countTime = 1f)
@@ -61,11 +62,10 @@ public class ResourcesTimeAssigner : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(countTime);
-            date = date.AddMonths(1);
-            CurrentDate.text = date.ToString();
-            balance -= expenses;
-            Debug.Log("This one is from coroutine");
-            Debug.Log(date.ToString());
+
+            Date = Date.AddMonths(1);
+            CurrentDate.text = Date.ToString();
+            Balance -= Expenses;
         }
     }
 
