@@ -63,7 +63,7 @@
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : [
-                 "3_1"
+                 "4", "3_1"
             ]
         },
         
@@ -72,7 +72,7 @@
             "ExpensesChange" : 0,
             "ClimateChange" : 5,
             "NextEventIDs" : [ 
-                "3_2"
+                "4", "3_2"
             ]
         }
     
@@ -140,7 +140,7 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : 0,
+            "BalanceChange" : -600,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : [
@@ -149,7 +149,7 @@
         },
         
         "Rejected" : {
-            "BalanceChange" : 0,
+            "BalanceChange" : -600,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
@@ -167,8 +167,8 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : 0,
-            "ExpensesChange" : 0,
+            "BalanceChange" : -400,
+            "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : [
                  
@@ -176,8 +176,8 @@
         },
         
         "Rejected" : {
-            "BalanceChange" : 0,
-            "ExpensesChange" : 0,
+            "BalanceChange" : -400,
+            "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
                 
@@ -225,7 +225,7 @@
             "ExpensesChange" : 40,
             "ClimateChange" : 0,
             "NextEventIDs" : [
-                 
+               "5"  
             ]
         },
         
@@ -283,7 +283,7 @@
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : [
-                 
+                 "6"
             ]
         },
         
@@ -292,7 +292,7 @@
             "ExpensesChange" : 40,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
-                
+                "6"
             ]
         }
     

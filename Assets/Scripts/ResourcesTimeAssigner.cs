@@ -27,6 +27,7 @@ public class ResourcesTimeAssigner : MonoBehaviour
     {
         Balance = 10000;
         Expenses = 200;
+        //ChangeClimateBarValue(15);
 
         BalanceText = GameObject.Find("FieldBalance").GetComponent(typeof(Text)) as Text;
         CurrentDate = GameObject.Find("FieldDate").GetComponent(typeof(Text)) as Text;
@@ -90,7 +91,7 @@ public class ResourcesTimeAssigner : MonoBehaviour
         
         if (climateChangeBarValueOffset > 0)
             climateChangeBarValueOffset = 0;
-        if (climateChangeBarValueOffset < -100)
+        else if (climateChangeBarValueOffset < -100)
             climateChangeBarValueOffset = -97;
 
         climateChangeBar.GetComponent<RectTransform>().offsetMax = new 
