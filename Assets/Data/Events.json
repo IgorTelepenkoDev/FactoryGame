@@ -4,7 +4,7 @@
         "Title" : "Starting",
         "Description" : "a",
         "TriggerCondition" : {
-            "Date" : "01.2023",
+            "Date" : "01.2022",
             "Checks" : [{
                 "Field" : "Balance",
                 "Operation" : ">",
