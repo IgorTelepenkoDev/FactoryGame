@@ -36,7 +36,7 @@ public class FactoryEventManager : MonoBehaviour
         if (!ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().isPaused && NextEvents != null)
             foreach (var availablEvent in NextEvents)
             {
-                Func<bool> triggerCondition = EventCreator.CreateTriggerCondition(availablEvent.TriggerCondition);
+                var triggerCondition = EventCreator.CreateTriggerCondition(availablEvent.TriggerCondition);
 
                 if (triggerCondition())
                     ActivateEvent(availablEvent);
@@ -71,8 +71,8 @@ public class FactoryEventManager : MonoBehaviour
         // change to return a list of next events, not just one
         NextEvents.Add(Events.Where(x => x.ID == currentEvent.Accepted.NextEventID).First());
 
-        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().balance += currentEvent.Accepted.BalanceChange;
-        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().expenses += currentEvent.Accepted.ExpensesChange;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Balance += currentEvent.Accepted.BalanceChange;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Expenses += currentEvent.Accepted.ExpensesChange;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().ChangeClimateBarValue(currentEvent.Accepted.ClimateChange);
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StartTime();
@@ -85,8 +85,8 @@ public class FactoryEventManager : MonoBehaviour
         // change to return a list of next events, not just one
         NextEvents.Add(Events.Where(x => x.ID == currentEvent.Rejected.NextEventID).First());
 
-        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().balance += currentEvent.Rejected.BalanceChange;
-        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().expenses += currentEvent.Rejected.ExpensesChange;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Balance += currentEvent.Rejected.BalanceChange;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().Expenses += currentEvent.Rejected.ExpensesChange;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().ChangeClimateBarValue(currentEvent.Rejected.ClimateChange);
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StartTime();
