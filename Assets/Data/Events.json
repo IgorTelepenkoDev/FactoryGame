@@ -194,7 +194,7 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : -200,
+            "BalanceChange" : -600,
             "ExpensesChange" : 0,
             "ClimateChange" : 15,
             "NextEventIDs" : [
@@ -222,7 +222,7 @@
     
         "Accepted" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 20,
+            "ExpensesChange" : 40,
             "ClimateChange" : 0,
             "NextEventIDs" : [
                 
@@ -637,15 +637,15 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : -1000,
+            "BalanceChange" : -1100,
             "ExpensesChange" : -20,
             "ClimateChange" : 0,
             "NextEventIDs" : ["9_2_1"]
         },
         
         "Rejected" : {
-            "BalanceChange" : 0,
-            "ExpensesChange" : -20,
+            "BalanceChange" : -1000,
+            "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : ["9_2_2"]
         }
@@ -706,14 +706,14 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : 0,
+            "BalanceChange" : 1500,
             "ExpensesChange" : 20,
             "ClimateChange" : -10,
             "NextEventIDs" : ["11"]
         },
         
         "Rejected" : {
-            "BalanceChange" : 0,
+            "BalanceChange" : 1500,
             "ExpensesChange" : 20,
             "ClimateChange" : -10,
             "NextEventIDs" : ["11"]
@@ -729,7 +729,7 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : 0,
+            "BalanceChange" : 3000,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : ["11_1"]
@@ -739,7 +739,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventIDs" : ["11_2"]
+            "NextEventIDs" : []
         }
     
     }, {
@@ -795,7 +795,7 @@
     },{
         "ID" : "12",
         "Title" : "Breaking news",
-        "Description" : "Breaking news: There was a major oil spill in the Atlantic Ocean. It has terrible efffect on the environment",
+        "Description" : "Breaking news: There was a major oil spill in the Atlantic Ocean. It has terrible efffect on the environment. Bad news for our public opinion",
         "TriggerCondition" : {
             "Date" : "04.2027",
             "Checks" : []
@@ -803,14 +803,14 @@
     
         "Accepted" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 0,
+            "ExpensesChange" : 20,
             "ClimateChange" : 30,
             "NextEventIDs" : ["13"]
         },
         
         "Rejected" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 0,
+            "ExpensesChange" : 20,
             "ClimateChange" : 30,
             "NextEventIDs" : ["13"]
         }
@@ -856,7 +856,7 @@
         
         "Rejected" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 20,
+            "ExpensesChange" : 25,
             "ClimateChange" : 0,
             "NextEventIDs" : ["14_2"]
         }
@@ -872,7 +872,7 @@
     
         "Accepted" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : -10,
+            "ExpensesChange" : -25,
             "ClimateChange" : 15,
             "NextEventIDs" : ["14_1_1"]
         },
@@ -963,14 +963,14 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : 0,
+            "BalanceChange" : -500,
             "ExpensesChange" : 30,
             "ClimateChange" : -10,
             "NextEventIDs" : ["16"]
         },
         
         "Rejected" : {
-            "BalanceChange" : 0,
+            "BalanceChange" : -500,
             "ExpensesChange" : 30,
             "ClimateChange" : -10,
             "NextEventIDs" : ["16"]
