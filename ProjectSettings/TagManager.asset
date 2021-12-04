@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PanelFactoryEvent
   - ResourcesTimeManager
+  - MenuPanel
   layers:
   - Default
   - TransparentFX
