@@ -140,7 +140,7 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : -600,
+            "BalanceChange" : -200,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : [
@@ -149,7 +149,7 @@
         },
         
         "Rejected" : {
-            "BalanceChange" : -600,
+            "BalanceChange" : -200,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
@@ -167,8 +167,8 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : -400,
-            "ExpensesChange" : 20,
+            "BalanceChange" : -100,
+            "ExpensesChange" : 10,
             "ClimateChange" : 0,
             "NextEventIDs" : [
                  
@@ -176,8 +176,8 @@
         },
         
         "Rejected" : {
-            "BalanceChange" : -400,
-            "ExpensesChange" : 20,
+            "BalanceChange" : -100,
+            "ExpensesChange" : 10,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
                 
@@ -196,7 +196,7 @@
         "Accepted" : {
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
-            "ClimateChange" : -2,
+            "ClimateChange" : -5,
             "NextEventIDs" : [
                  "5", "0_1"
             ]
@@ -205,7 +205,7 @@
         "Rejected" : {
             "BalanceChange" : -200,
             "ExpensesChange" : 0,
-            "ClimateChange" : 5,
+            "ClimateChange" : 15,
             "NextEventIDs" : [ 
                "5", "4_2", "0_1"
             ]
@@ -222,7 +222,7 @@
     
         "Accepted" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 40,
+            "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : [
                 
@@ -231,7 +231,7 @@
         
         "Rejected" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 40,
+            "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
                 
@@ -280,7 +280,7 @@
     
         "Accepted" : {
             "BalanceChange" : 500,
-            "ExpensesChange" : 0,
+            "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : [
                  "6"
@@ -289,7 +289,7 @@
         
         "Rejected" : {
             "BalanceChange" : 500,
-            "ExpensesChange" : 40,
+            "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
                 "6"
@@ -511,7 +511,7 @@
     },{
         "ID" : "8_1",
         "Title" : "The Toxicity of our city",
-        "Description" : "We started burning shail oil reserves  to produce energy. It will help us to make profit!",
+        "Description" : "We started burning shail oil reserves to produce energy. It will help us to make profit!",
         "TriggerCondition" : {
             "Date" : "12.2025",
             "Checks" : []
@@ -519,15 +519,15 @@
     
         "Accepted" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 0,
-            "ClimateChange" : 0,
+            "ExpensesChange" : -40,
+            "ClimateChange" : -20,
             "NextEventIDs" : ["9"]
         },
         
         "Rejected" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 0,
-            "ClimateChange" : 0,
+            "ExpensesChange" : -40,
+            "ClimateChange" : -20,
             "NextEventIDs" : ["9"]
         }
     
@@ -565,7 +565,7 @@
     
         "Accepted" : {
             "BalanceChange" : -2500,
-            "ExpensesChange" : -20,
+            "ExpensesChange" : -50,
             "ClimateChange" : -10,
             "NextEventIDs" : ["9_1"]
         },
@@ -610,7 +610,7 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : -2000,
+            "BalanceChange" : -1000,
             "ExpensesChange" : -20,
             "ClimateChange" : 0,
             "NextEventIDs" : ["9_2_1"]
@@ -640,7 +640,7 @@
         },
         
         "Rejected" : {
-            "BalanceChange" : 0,
+            "BalanceChange" : -1000,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : ["10"]
@@ -693,6 +693,29 @@
         }
     
     },{
+        "ID" : "11",
+        "Title" : "Competitor trade",
+        "Description" : "Our competitor wants to buy an old station from us. We can sell it to them to gain some instant money",
+        "TriggerCondition" : {
+            "Date" : "12.2026",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["11_1"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["11_2"]
+        }
+    
+    }, {
         "ID" : "11_1",
         "Title" : "Competitor trade",
         "Description" : "It seems like a great deal for our business",
@@ -1010,7 +1033,7 @@
     
         "Accepted" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 0,
+            "ExpensesChange" : 30,
             "ClimateChange" : 0,
             "NextEventIDs" : ["17"]
         },
