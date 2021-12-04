@@ -21,7 +21,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : [
+            "NextEventIDs" : [
                 "2"
             ]
         }
@@ -39,14 +39,14 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : ["3"]
+            "NextEventIDs" : ["3"]
         },
         
         "Rejected" : {
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : ["3"]
+            "NextEventIDs" : ["3"]
         }
     
     }, {
@@ -62,7 +62,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : [
+            "NextEventIDs" : [
                  "3_1"
             ]
         },
@@ -71,7 +71,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 5,
-            "NextEventID" : [ 
+            "NextEventIDs" : [ 
                 "3_2"
             ]
         }
@@ -89,7 +89,7 @@
             "BalanceChange" : -100,
             "ExpensesChange" : 20,
             "ClimateChange" : -3,
-            "NextEventID" : [
+            "NextEventIDs" : [
                  
             ]
         },
@@ -98,7 +98,7 @@
             "BalanceChange" : -100,
             "ExpensesChange" : 20,
             "ClimateChange" : -3,
-            "NextEventID" : [ 
+            "NextEventIDs" : [ 
                 
             ]
         }
@@ -116,7 +116,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : [
+            "NextEventIDs" : [
                  "3_2_1"
             ]
         },
@@ -125,7 +125,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : [ 
+            "NextEventIDs" : [ 
                 "3"
             ]
         }
@@ -143,7 +143,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : [
+            "NextEventIDs" : [
                  
             ]
         },
@@ -152,7 +152,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : [ 
+            "NextEventIDs" : [ 
                 
             ]
         }
@@ -170,7 +170,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : [
+            "NextEventIDs" : [
                  
             ]
         },
@@ -179,7 +179,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : [ 
+            "NextEventIDs" : [ 
                 
             ]
         }
@@ -197,7 +197,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : -2,
-            "NextEventID" : [
+            "NextEventIDs" : [
                  
             ]
         },
@@ -206,7 +206,7 @@
             "BalanceChange" : -200,
             "ExpensesChange" : 0,
             "ClimateChange" : 5,
-            "NextEventID" : [ 
+            "NextEventIDs" : [ 
                "4_2", "0_1"
             ]
         }
@@ -224,7 +224,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 40,
             "ClimateChange" : 0,
-            "NextEventID" : [
+            "NextEventIDs" : [
                  
             ]
         },
@@ -233,7 +233,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 40,
             "ClimateChange" : 0,
-            "NextEventID" : [ 
+            "NextEventIDs" : [ 
                 
             ]
         }
@@ -255,7 +255,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : -40,
             "ClimateChange" : 0,
-            "NextEventID" : [
+            "NextEventIDs" : [
                  
             ]
         },
@@ -264,7 +264,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : -40,
             "ClimateChange" : 0,
-            "NextEventID" : [ 
+            "NextEventIDs" : [ 
                 
             ]
         }
@@ -282,7 +282,7 @@
             "BalanceChange" : 500,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : [
+            "NextEventIDs" : [
                  
             ]
         },
@@ -291,7 +291,7 @@
             "BalanceChange" : 500,
             "ExpensesChange" : 40,
             "ClimateChange" : 0,
-            "NextEventID" : [ 
+            "NextEventIDs" : [ 
                 
             ]
         }
@@ -313,7 +313,7 @@
             "BalanceChange" : 1000,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : [
+            "NextEventIDs" : [
                  
             ]
         },
@@ -322,7 +322,7 @@
             "BalanceChange" : 1000,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : [ 
+            "NextEventIDs" : [ 
                 
             ]
         }
@@ -340,7 +340,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : [
+            "NextEventIDs" : [
                  "6_1"
             ]
         },
@@ -349,7 +349,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : [ 
+            "NextEventIDs" : [ 
                 "6_2"
             ]
         }
@@ -367,7 +367,7 @@
             "BalanceChange" : -2500,
             "ExpensesChange" : 80,
             "ClimateChange" : 0,
-            "NextEventID" : [
+            "NextEventIDs" : [
                  
             ]
         },
@@ -376,7 +376,7 @@
             "BalanceChange" : -2500,
             "ExpensesChange" : 80,
             "ClimateChange" : 0,
-            "NextEventID" : [ 
+            "NextEventIDs" : [ 
                 
             ]
         }
@@ -394,7 +394,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : [
+            "NextEventIDs" : [
                  "6_2_1"
             ]
         },
@@ -403,7 +403,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventID" : [ 
+            "NextEventIDs" : [ 
                 "6_2_2"
             ]
         }
@@ -421,7 +421,7 @@
             "BalanceChange" : -5000,
             "ExpensesChange" : 150,
             "ClimateChange" : 0,
-            "NextEventID" : [
+            "NextEventIDs" : [
                  
             ]
         },
@@ -430,7 +430,7 @@
             "BalanceChange" : -5000,
             "ExpensesChange" : 150,
             "ClimateChange" : 0,
-            "NextEventID" : [ 
+            "NextEventIDs" : [ 
                 
             ]
         }
@@ -448,7 +448,7 @@
             "BalanceChange" : -500,
             "ExpensesChange" : 50,
             "ClimateChange" : 0,
-            "NextEventID" : [
+            "NextEventIDs" : [
                  
             ]
         },
@@ -457,7 +457,7 @@
             "BalanceChange" : -500,
             "ExpensesChange" : 50,
             "ClimateChange" : 0,
-            "NextEventID" : [ 
+            "NextEventIDs" : [ 
                 
             ]
         }
