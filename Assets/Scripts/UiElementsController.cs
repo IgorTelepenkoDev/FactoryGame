@@ -73,6 +73,11 @@ public class UiElementsController : MonoBehaviour
         }
     }
 
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
     public void ActivateGameOverPanel()
     {
         DialogBoxShow(canvasGroupGameOver);
