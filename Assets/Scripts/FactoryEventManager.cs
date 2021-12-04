@@ -52,7 +52,7 @@ public class FactoryEventManager : MonoBehaviour
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StopTime();
 
         var eventTitleField = displayedEventPanel.transform.
-            Find("EventTitle").
+            Find("EventTitle").transform.Find("TextTitle").
             GetComponent(typeof(Text)) as Text;
 
         eventTitleField.text = startedEvent.Title;
