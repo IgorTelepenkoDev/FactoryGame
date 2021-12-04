@@ -26,6 +26,8 @@ public class FactoryEventManager : MonoBehaviour
         ResourcesTimeManager = GameObject.FindGameObjectWithTag("ResourcesTimeManager");
 
         Events = EventCreator.LoadEvents();
+        if (Events != null)
+            NextEvents = new List<GameEvent> { Events[0] };
     }
 
     // Update is called once per frame
@@ -66,11 +68,12 @@ public class FactoryEventManager : MonoBehaviour
     {
         if (currentEvent == null)
             return;
-
+        // change to return a list of next events, not just one
         NextEvents.Add(Events.Where(x => x.ID == currentEvent.Accepted.NextEventID).First());
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().balance += currentEvent.Accepted.BalanceChange;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().expenses += currentEvent.Accepted.ExpensesChange;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().ChangeClimateBarValue(currentEvent.Accepted.ClimateChange);
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StartTime();
     }
@@ -79,11 +82,12 @@ public class FactoryEventManager : MonoBehaviour
     {
         if (currentEvent == null)
             return;
-
+        // change to return a list of next events, not just one
         NextEvents.Add(Events.Where(x => x.ID == currentEvent.Rejected.NextEventID).First());
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().balance += currentEvent.Rejected.BalanceChange;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().expenses += currentEvent.Rejected.ExpensesChange;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().ChangeClimateBarValue(currentEvent.Rejected.ClimateChange);
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StartTime();
     }

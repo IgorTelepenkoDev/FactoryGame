@@ -11,7 +11,7 @@ namespace Assets.Scripts.Models
     {
         public string Field { get; set; }
         public string Operation { get; set; }
-        public string Value { get; set; }
+        public int Value { get; set; }
     }
 
     public class TriggerCondition

@@ -4,11 +4,11 @@
         "Title" : "Starting",
         "Description" : "a",
         "TriggerCondition" : {
-            "Date" : "mm.yyyy",
+            "Date" : "01.2023",
             "Checks" : [{
                 "Field" : "Balance",
                 "Operation" : ">",
-                "Value" : "20"
+                "Value" : 20
             }]
         },
     
@@ -29,7 +29,7 @@
         "Title" : "Starting",
         "Description" : "a",
         "TriggerCondition" : {
-            "Date" : "mm.yyyy",
+            "Date" : "04.2023",
             "Checks" : [{
                 "Field" : "Balance",
                 "Operation" : ">",
