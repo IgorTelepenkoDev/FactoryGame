@@ -1,0 +1,53 @@
+{
+    "Events": [{
+        "ID" : "1",
+        "Title" : "Starting",
+        "Description" : "a",
+        "TriggerCondition" : {
+            "Date" : "mm.yyyy",
+            "Checks" : [{
+                "Field" : "Balance",
+                "Operation" : ">",
+                "Value" : "20"
+            }]
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 20,
+            "ExpensesChange" : 5,
+            "NextEventID" : "2"
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 20,
+            "ExpensesChange" : 5,
+            "NextEventID" : "2"
+        }
+    
+    }, {
+        "ID" : "2",
+        "Title" : "Starting",
+        "Description" : "a",
+        "TriggerCondition" : {
+            "Date" : "mm.yyyy",
+            "Checks" : [{
+                "Field" : "Balance",
+                "Operation" : ">",
+                "Value" : "20"
+            }]
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 20,
+            "ExpensesChange" : 5,
+            "NextEventID;" : "SecondQuest"
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 20,
+            "ExpensesChange" : 5,
+            "NextEventID" : "2"
+        }
+    
+    }]
+}

@@ -11,6 +11,7 @@ using Newtonsoft.Json.Linq;
 using System.Linq.Expressions;
 
 public static class EventCreator
+
 {
     public static List<GameEvent> LoadEvents()
     {
@@ -29,26 +30,37 @@ public static class EventCreator
     public static Func<bool> CreateTriggerCondition(TriggerCondition condition)
     {
         var resourcesTimeManager = GameObject.FindGameObjectWithTag("ResourcesTimeManager");
+        var resourceTimeAssigner = resourcesTimeManager.GetComponent<ResourcesTimeAssigner>();
+
+        var expressions = new List<Expression<Func<bool>>>();
 
         foreach (var check in condition.Checks)
         {
             ConstantExpression x = null;
             ConstantExpression y = null;
-
+            BinaryExpression exp = null;
 
             if (check.Field == "Balance") 
-                x = Expression.Constant(resourcesTimeManager.GetComponent<ResourcesTimeAssigner>().balance);
+                x = Expression.Constant(resourceTimeAssigner.balance);
             else if (check.Field == "Expenses")
-                x = Expression.Constant(resourcesTimeManager.GetComponent<ResourcesTimeAssigner>().expenses);
-            else if (check.Field == "Climate") ;
-            //x = Expression.Constant(climate)
+                x = Expression.Constant(resourceTimeAssigner.expenses);
+            else if (check.Field == "Climate") 
+                x = Expression.Constant(resourceTimeAssigner.expenses);
 
             y = Expression.Constant(check.Value);
 
-            if (check.Operation == ">") ;
-            else if (check.Operation == "<") ;
-            else if (check.Operation == "=") ;
+            if (check.Operation == ">")
+                exp = Expression.GreaterThan(x, y);
+            else if (check.Operation == "<")
+                exp = Expression.LessThan(x, y);
+            else if (check.Operation == "=")
+                exp = Expression.Equal(x, y);
 
+            expressions.Add(Expression.Lambda<Func<bool>>(exp));
         }
+
+        var finalExpression = expressions.Aggregate(expressions[0], (acc, i) => Expression.Lambda<Func<bool>>(Expression.And(acc, i))).Compile();
+
+        return finalExpression;
     }
 }
