@@ -54,6 +54,7 @@ public class FactoryEventManager : MonoBehaviour
             BalanceChangeIfAccepted;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().expenses += currentEvent.
             ExpensesChangeIfAccepted;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().ChangeClimateBarValue(currentEvent.BalanceChangeIfAccepted);
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StartTime();
     }
@@ -65,6 +66,7 @@ public class FactoryEventManager : MonoBehaviour
             BalanceChangeIfRejected;
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().expenses += currentEvent.
             ExpensesChangeIfRejected;
+        ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().ChangeClimateBarValue(currentEvent.BalanceChangeIfRejected);
 
         ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().StartTime();
     }

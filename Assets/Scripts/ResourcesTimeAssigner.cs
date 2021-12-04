@@ -83,7 +83,7 @@ public class ResourcesTimeAssigner : MonoBehaviour
         timer = StartCoroutine(Timer());
     }
 
-    public void ChangeClimateBar(int climateChangeRate)
+    public void ChangeClimateBarValue(int climateChangeRate)
     {
         var climateChangeBarValueOffset = 
             climateChangeBar.GetComponent<RectTransform>().offsetMax.x + climateChangeRate;
