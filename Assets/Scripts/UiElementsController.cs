@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UiElementsController : MonoBehaviour
 {
@@ -78,9 +79,15 @@ public class UiElementsController : MonoBehaviour
         Application.Quit();
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     public void ActivateGameOverPanel()
     {
         DialogBoxShow(canvasGroupGameOver);
+        resourceTimeManager.GetComponent<ResourcesTimeAssigner>().StopTime();
     }
 
     public void DialogBoxShow(CanvasGroup canvasGroupElem)
