@@ -25,11 +25,12 @@ public class FactoryEventManager : MonoBehaviour
     void Update()
     {
         if (!ResourcesTimeManager.GetComponent<ResourcesTimeAssigner>().isPaused)
-            foreach (var availablEvent in nextFactoryEvents)
-            {
-                if (availablEvent.TriggerCondition())
-                    ActivateEvent(availablEvent);
-            }
+            if(nextFactoryEvents != null)
+                foreach (var availablEvent in nextFactoryEvents)
+                {
+                    if (availablEvent.TriggerCondition())
+                        ActivateEvent(availablEvent);
+                }
     }
 
     void ActivateEvent(FactoryEvent startedEvent)

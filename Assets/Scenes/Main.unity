@@ -2188,7 +2188,7 @@ GameObject:
   - component: {fileID: 1896601638}
   m_Layer: 0
   m_Name: ResourcesTimeManager
-  m_TagString: Untagged
+  m_TagString: ResourcesTimeManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PanelFactoryEvent
+  - ResourcesTimeManager
   layers:
   - Default
   - TransparentFX
