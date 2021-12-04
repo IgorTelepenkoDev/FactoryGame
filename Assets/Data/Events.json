@@ -140,7 +140,7 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : -200,
+            "BalanceChange" : -600,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : [
@@ -149,7 +149,7 @@
         },
         
         "Rejected" : {
-            "BalanceChange" : -200,
+            "BalanceChange" : -600,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
@@ -167,7 +167,7 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : -100,
+            "BalanceChange" : -200,
             "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : [
@@ -176,7 +176,7 @@
         },
         
         "Rejected" : {
-            "BalanceChange" : -100,
+            "BalanceChange" : -200,
             "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
@@ -280,7 +280,7 @@
     
         "Accepted" : {
             "BalanceChange" : 1000,
-            "ExpensesChange" : 20,
+            "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : [
                  "6"
@@ -289,7 +289,7 @@
         
         "Rejected" : {
             "BalanceChange" : 1000,
-            "ExpensesChange" : 20,
+            "ExpensesChange" : 0,
             "ClimateChange" : 0,
             "NextEventIDs" : [ 
                 "6"
@@ -546,15 +546,15 @@
     
         "Accepted" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : -40,
-            "ClimateChange" : -20,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
             "NextEventIDs" : ["9"]
         },
         
         "Rejected" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : -40,
-            "ClimateChange" : -20,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
             "NextEventIDs" : ["9"]
         }
     
@@ -569,14 +569,14 @@
     
         "Accepted" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 10,
+            "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : ["9"]
         },
         
         "Rejected" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 10,
+            "ExpensesChange" : 20,
             "ClimateChange" : 0,
             "NextEventIDs" : ["9"]
         }
@@ -592,7 +592,7 @@
     
         "Accepted" : {
             "BalanceChange" : -2500,
-            "ExpensesChange" : -50,
+            "ExpensesChange" : -25,
             "ClimateChange" : -10,
             "NextEventIDs" : ["9_1"]
         },
@@ -601,7 +601,7 @@
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
             "ClimateChange" : 0,
-            "NextEventIDs" : ["9_2","10"]
+            "NextEventIDs" : ["9_2"]
         }
     
     },{
@@ -706,15 +706,15 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : 2500,
-            "ExpensesChange" : 0,
+            "BalanceChange" : 0,
+            "ExpensesChange" : 20,
             "ClimateChange" : -10,
             "NextEventIDs" : ["11"]
         },
         
         "Rejected" : {
-            "BalanceChange" : 2500,
-            "ExpensesChange" : 0,
+            "BalanceChange" : 0,
+            "ExpensesChange" : 20,
             "ClimateChange" : -10,
             "NextEventIDs" : ["11"]
         }
@@ -782,14 +782,14 @@
             "BalanceChange" : -2000,
             "ExpensesChange" : -10,
             "ClimateChange" : 0,
-            "NextEventIDs" : ["12"]
+            "NextEventIDs" : []
         },
         
         "Rejected" : {
             "BalanceChange" : -2000,
             "ExpensesChange" : -10,
             "ClimateChange" : 0,
-            "NextEventIDs" : ["12"]
+            "NextEventIDs" : []
         }
     
     },{
@@ -804,14 +804,14 @@
         "Accepted" : {
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
-            "ClimateChange" : 20,
+            "ClimateChange" : 30,
             "NextEventIDs" : ["13"]
         },
         
         "Rejected" : {
             "BalanceChange" : 0,
             "ExpensesChange" : 0,
-            "ClimateChange" : 20,
+            "ClimateChange" : 30,
             "NextEventIDs" : ["13"]
         }
     
@@ -873,7 +873,7 @@
         "Accepted" : {
             "BalanceChange" : 0,
             "ExpensesChange" : -10,
-            "ClimateChange" : 10,
+            "ClimateChange" : 15,
             "NextEventIDs" : ["14_1_1"]
         },
         
@@ -918,15 +918,15 @@
     
         "Accepted" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 10,
+            "ExpensesChange" : 25,
             "ClimateChange" : -10,
             "NextEventIDs" : ["15"]
         },
         
         "Rejected" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 0,
-            "ClimateChange" : 0,
+            "ExpensesChange" : 25,
+            "ClimateChange" : -10,
             "NextEventIDs" : ["15"]
         }
     
@@ -964,14 +964,14 @@
     
         "Accepted" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 20,
+            "ExpensesChange" : 30,
             "ClimateChange" : -10,
             "NextEventIDs" : ["16"]
         },
         
         "Rejected" : {
             "BalanceChange" : 0,
-            "ExpensesChange" : 20,
+            "ExpensesChange" : 30,
             "ClimateChange" : -10,
             "NextEventIDs" : ["16"]
         }
@@ -986,7 +986,7 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : -1500,
+            "BalanceChange" : -2000,
             "ExpensesChange" : 0,
             "ClimateChange" : 10,
             "NextEventIDs" : ["16_1"]
@@ -995,7 +995,7 @@
         "Rejected" : {
             "BalanceChange" : 0,
             "ExpensesChange" : 30,
-            "ClimateChange" : 0,
+            "ClimateChange" : -10,
             "NextEventIDs" : ["16_2"]
         }
     
@@ -1082,14 +1082,14 @@
         },
     
         "Accepted" : {
-            "BalanceChange" : 0,
+            "BalanceChange" : -2500,
             "ExpensesChange" : 30,
             "ClimateChange" : -20,
             "NextEventIDs" : ["18"]
         },
         
         "Rejected" : {
-            "BalanceChange" : 0,
+            "BalanceChange" : -2500,
             "ExpensesChange" : 30,
             "ClimateChange" : -20,
             "NextEventIDs" : ["18"]
