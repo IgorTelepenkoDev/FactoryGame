@@ -1,0 +1,1123 @@
+{
+    "Events": [{
+        "ID" : "1",
+        "Title" : "Welcome to our game!",
+        "Description" : "You start as a new CEO at a fossil fuel energy company, which recently suffered huge losses of income, so you need to improve the situation. Inspector from the board of directors will come to you every couple of years and give you feedback on how pleased they are with you. If they won't be pleased, you will be fired",
+        "TriggerCondition" : {
+            "Date" : "01.2023",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                "2"
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                "2"
+            ]
+        }
+    
+    }, {
+        "ID" : "2",
+        "Title" : "Tutorial",
+        "Description" : "On your first meeting, inspector tells you about your responsibilities and what you need to keep track of, he tells you about balance, expenses and time, expenses are applied to balance each month. If balance is too low, you are fired. Your goal is to increase balance by any means possible.",
+        "TriggerCondition" : {
+            "Date" : "02.2023",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["3"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["3"]
+        }
+    
+    }, {
+        "ID" : "3",
+        "Title" : "New Regulation",
+        "Description" : "A new law is passed, that requires you to install CO2 filters on a factory in a specific country, will you install them?\n This will cause installation expenses, and decrease efficiency of our plants.",
+        "TriggerCondition" : {
+            "Date" : "06.2023",
+            "Checks" : [ ]
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                 "4", "3_1"
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 5,
+            "NextEventIDs" : [ 
+                "4", "3_2"
+            ]
+        }
+    
+    }, {
+        "ID" : "3_1",
+        "Title" : "New Regulation",
+        "Description" : "New filters were installed. We paid 100 units of money and now have 20 more expenses each month",
+        "TriggerCondition" : {
+            "Date" : "06.2023",
+            "Checks" : [ ]
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -100,
+            "ExpensesChange" : 20,
+            "ClimateChange" : -3,
+            "NextEventIDs" : [
+                 
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : -100,
+            "ExpensesChange" : 20,
+            "ClimateChange" : -3,
+            "NextEventIDs" : [ 
+                
+            ]
+        }
+    
+    }, {
+        "ID" : "3_2",
+        "Title" : "New Regulation",
+        "Description" : "An inspection from the government is concluded at the factory you didn't install filters on and they found that out. The government inspector wants to fine you, and force to install filters. Will you try to bribe him?",
+        "TriggerCondition" : {
+            "Date" : "06.2024",
+            "Checks" : [ ]
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                 "3_2_1"
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [ 
+                "3_2_2"
+            ]
+        }
+    
+    }, {
+        "ID" : "3_2_1",
+        "Title" : "New Regulation",
+        "Description" : "Bribe was successful, but you had to pay a lot of money.\n- 200 balance.",
+        "TriggerCondition" : {
+            "Date" : "06.2024",
+            "Checks" : [ ]
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -600,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                 
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : -600,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [ 
+                
+            ]
+        }
+    
+    }, {
+        "ID" : "3_2_2",
+        "Title" : "New Regulation",
+        "Description" : "You pay a fine and are forced to install the filters.\n-100 Balance, +20 Expenses",
+        "TriggerCondition" : {
+            "Date" : "06.2024",
+            "Checks" : [ ]
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -200,
+            "ExpensesChange" : 20,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                 
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : -200,
+            "ExpensesChange" : 20,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [ 
+                
+            ]
+        }
+    
+    }, {
+        "ID" : "4",
+        "Title" : "Science always shows the truth",
+        "Description" : "A group of climate researchers is planning to conduct a research on how strongly does coal burning affected the climate of a specific region, where you have a lot of production. You have connections with that group and you know that you can sponsor them, to spin the research results in your favor. Will you do it?",
+        "TriggerCondition" : {
+            "Date" : "01.2024",
+            "Checks" : [ ]
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -600,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 15,
+            "NextEventIDs" : [
+                 "5", "0_1"
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : -5,
+            "NextEventIDs" : [ 
+               "5", "4_2", "0_1"
+            ]
+        }
+    
+    }, {
+        "ID" : "4_2",
+        "Title" : "Science always shows the truth",
+        "Description" : "After some time the study is published, which causes public opinion to change. Government has passed additional laws for climate control\n+40 Expense",
+        "TriggerCondition" : {
+            "Date" : "09.2024",
+            "Checks" : [ ]
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 40,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 20,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [ 
+                
+            ]
+        }
+    
+    }, {
+        "ID" : "0_1",
+        "Title" : "First Signs",
+        "Description" : "Due to increased temperatures, rivers in tropical regions started to dry off, which decreased the effectiveness of hydroelectric power stations. More people have to rely on our power stations.\n-40 Expense",
+        "TriggerCondition" : {
+            "Date" : "02.2024",
+            "Checks" : [{
+                "Field" : "Climate",
+                "Operator" : ">",  
+                "Value" : 20
+            }]
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : -40,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                 
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : -40,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [ 
+                
+            ]
+        }
+    
+    }, {
+        "ID" : "5",
+        "Title" : "One man's catastrophe",
+        "Description" : "Breaking News! Atomic reactor in Zagrovia has exploded! there are 20 casualties, most of them scientists and liquidators. The area near the reactor was evacuated. This has decreased investors' trust in Atomic Energy, so more of their money is invested into our company. \n +1000 Balance",
+        "TriggerCondition" : {
+            "Date" : "06.2024",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 1000,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                 "6"
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 1000,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [ 
+                "6"
+            ]
+        }
+    
+    }, {
+        "ID" : "0_2",
+        "Title" : "First Successes",
+        "Description" : "The company's financial situation seems to stabilize. The investors are gaining trust in the new CEO and the future of our company. New investments are on the way\n +1000 Balance",
+        "TriggerCondition" : {
+            "Date" : "08.2024",
+            "Checks" : [{
+                "Field" : "Expenses",
+                "Operator" : "<",  
+                "Value" : 160
+            }]
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 1000,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                 
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 1000,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [ 
+                
+            ]
+        }
+    
+    }, {
+        "ID" : "6",
+        "Title" : "Tricky Situation",
+        "Description" : "An accident happened on one of our oldest power plants. Because the equipment was old and not updated regularly, a crucial part of safety check broke, which caused a fatal accident. After that, the workers went on a strike, demanding increased safety, pay, and improved work conditions. Do you want to give in, or deal with them in some other way?",
+        "TriggerCondition" : {
+            "Date" : "04.2025",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                 "7", "6_1"
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [ 
+                "7" ,"6_2"
+            ]
+        }
+    
+    }, {
+        "ID" : "6_1",
+        "Title" : "Tricky Situation",
+        "Description" : "We had to give financial compensation to the family of the dead, and increase spending on factory maintenance. We had to replicate those changes across all factories. We also had to pay fine for bad work conditions, and pay for losses in numerous lawsuits that came afterwards. -2500 Balance, +80 Expense",
+        "TriggerCondition" : {
+            "Date" : "04.2025",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -2500,
+            "ExpensesChange" : 80,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                 
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : -2500,
+            "ExpensesChange" : 80,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [ 
+                
+            ]
+        }
+    
+    }, {
+        "ID" : "6_2",
+        "Title" : "Tricky Situation",
+        "Description" : "How do you want to deal with them? Do you want to ignore their demands, waiting until they give up?  The other variant would be to hire new workers from poorer regions, that will be ready to work in those conditions.",
+        "TriggerCondition" : {
+            "Date" : "04.2025",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                 "6_2_1"
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [ 
+                "6_2_2"
+            ]
+        }
+    
+    }, {
+        "ID" : "6_2_1",
+        "Title" : "Tricky Situation",
+        "Description" : "The situation escalated. Other factories started participating in the strike. Nation-wide media started to cover this event. A famous law firm started a class-action lawsuit. Huge concessions had to be made -5000 Balance, +150 Expense",
+        "TriggerCondition" : {
+            "Date" : "04.2025",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -5000,
+            "ExpensesChange" : 150,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                 
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : -5000,
+            "ExpensesChange" : 150,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [ 
+                
+            ]
+        }
+    
+    }, {
+        "ID" : "6_2_2",
+        "Title" : "Tricky Situation",
+        "Description" : "New workers were fired in place of protesting workers. Protester saw that their actions are futile and stopped. We had to pay for a hiring campaign. Also, new workers were unexperienced, so new expenses had to be paid for education. Efficiency decreased",
+        "TriggerCondition" : {
+            "Date" : "04.2025",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -1000,
+            "ExpensesChange" : 25,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                 
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : -1000,
+            "ExpensesChange" : 25,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [ 
+                
+            ]
+        }
+    
+    }, {
+        "ID" : "0_2",
+        "Title" : "First Successes",
+        "Description" : "New workers were fired in place of protesting workers. Protester saw that their actions are futile and stopped. We had to pay for a hiring campaign. Also, new workers were unexperienced, so new expenses had to be paid for education. Efficiency decreased -500 Balance, +50 Expense.",
+        "TriggerCondition" : {
+            "Date" : "04.2025",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -500,
+            "ExpensesChange" : 50,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [
+                 
+            ]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : -500,
+            "ExpensesChange" : 50,
+            "ClimateChange" : 0,
+            "NextEventIDs" : [ 
+                
+            ]
+        }
+    
+    },{
+        "ID" : "7",
+        "Title" : "Inspection",
+        "Description" : "First inspector check, new goal set.",
+        "TriggerCondition" : {
+            "Date" : "08.2025",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["8"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["8"]
+        }
+    
+    },{
+        "ID" : "8",
+        "Title" : "The Toxicity of our city",
+        "Description" : "The resources are gradually getting low, but there are oil shale reserves. We might start using them to earn some money out of it, should we do it? ",
+        "TriggerCondition" : {
+            "Date" : "12.2025",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : -10,
+            "ClimateChange" : 30,
+            "NextEventIDs" : ["8_1"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["8_2"]
+        }
+    
+    },{
+        "ID" : "8_1",
+        "Title" : "The Toxicity of our city",
+        "Description" : "We started burning shail oil reserves to produce energy. It will help us to make profit!",
+        "TriggerCondition" : {
+            "Date" : "12.2025",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["9"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["9"]
+        }
+    
+    },{
+        "ID" : "8_2",
+        "Title" : "The Toxicity of our city",
+        "Description" : "Prices for fossil fuels are getting higher",
+        "TriggerCondition" : {
+            "Date" : "01.2026",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 20,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["9"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 20,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["9"]
+        }
+    
+    },{
+        "ID" : "9",
+        "Title" : "New equipment",
+        "Description" : "Hey Boss, I think we might use some new technologies at our facilities. It would be great, I heard they are safer and more profitable! Should we install them?",
+        "TriggerCondition" : {
+            "Date" : "04.2026",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -2500,
+            "ExpensesChange" : -25,
+            "ClimateChange" : -10,
+            "NextEventIDs" : ["9_1"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["9_2"]
+        }
+    
+    },{
+        "ID" : "9_1",
+        "Title" : "New equipment",
+        "Description" : "After installing the latest technologies our production became more efficient and upkeep became cheaper.",
+        "TriggerCondition" : {
+            "Date" : "04.2026",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["10"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["10"]
+        }
+    
+    },{
+        "ID" : "9_2",
+        "Title" : "New equipment",
+        "Description" : "there was an accident at our power plant. The old Boiler blew up and killed an operator. His family has sued us and we need to pay them. Should we get a safety inspection to avoid further accidents?",
+        "TriggerCondition" : {
+            "Date" : "10.2026",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -1100,
+            "ExpensesChange" : -20,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["9_2_1"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : -1000,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["9_2_2"]
+        }
+    
+    },{
+        "ID" : "9_2_1",
+        "Title" : "New equipment",
+        "Description" : "We have to pay the family of the worker. But there is great news, inspection said that our facility is in a good condition, sadly receipt from them is not that comforting",
+        "TriggerCondition" : {
+            "Date" : "10.2026",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["10"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : -1000,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["10"]
+        }
+    
+    },{
+        "ID" : "9_2_2",
+        "Title" : "New equipment",
+        "Description" : "We still have to pay the workers family",
+        "TriggerCondition" : {
+            "Date" : "10.2026",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["10"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["10"]
+        }
+    
+    },{
+        "ID" : "10",
+        "Title" : "Electric cars",
+        "Description" : "Great news Boss! There are high demand for electric cars right now! Thankfuly people do not really care where the energy comes from, so we can make lots of profits from it. Let us hope peoples consciousness will not backfire later",
+        "TriggerCondition" : {
+            "Date" : "08.2026",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 1500,
+            "ExpensesChange" : -20,
+            "ClimateChange" : -10,
+            "NextEventIDs" : ["11"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 1500,
+            "ExpensesChange" : -20,
+            "ClimateChange" : -10,
+            "NextEventIDs" : ["11"]
+        }
+    
+    },{
+        "ID" : "11",
+        "Title" : "Competitor trade",
+        "Description" : "Our competitor wants to buy an old station from us. We can sell it to them to gain some instant money",
+        "TriggerCondition" : {
+            "Date" : "12.2026",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 3000,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["11_1"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["12"]
+        }
+    
+    }, {
+        "ID" : "11_1",
+        "Title" : "Competitor trade",
+        "Description" : "It seems like a great deal for our business",
+        "TriggerCondition" : {
+            "Date" : "12.2026",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["11_1_1","12"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["11_1_1","12"]
+        }
+    
+    },{
+        "ID" : "11_1_1",
+        "Title" : "Competitor trade",
+        "Description" : "We had to invest in a better maintenance crew, to keep our costs down",
+        "TriggerCondition" : {
+            "Date" : "03.2027",
+            "Checks" : [{
+                "Field" : "Expenses",
+                "Operator" : ">",  
+                "Value" : 160
+            }]
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -2000,
+            "ExpensesChange" : -25,
+            "ClimateChange" : 0,
+            "NextEventIDs" : []
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : -2000,
+            "ExpensesChange" : -25,
+            "ClimateChange" : 0,
+            "NextEventIDs" : []
+        }
+    
+    },{
+        "ID" : "12",
+        "Title" : "Breaking news",
+        "Description" : "Breaking news: There was a major oil spill in the Atlantic Ocean. It has terrible efffect on the environment. Bad news for our public opinion",
+        "TriggerCondition" : {
+            "Date" : "04.2027",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 10,
+            "ClimateChange" : 30,
+            "NextEventIDs" : ["13"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 20,
+            "ClimateChange" : 30,
+            "NextEventIDs" : ["13"]
+        }
+    
+    },{
+        "ID" : "13",
+        "Title" : "Inspector",
+        "Description" : "second inspector check, new goal set.",
+        "TriggerCondition" : {
+            "Date" : "08.2027",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["14"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["14"]
+        }
+    
+    },{
+        "ID" : "14",
+        "Title" : "Supply shortage",
+        "Description" : "The current supplier of fossil fuels can not provide us with enough resources. Should we start looking after a new supplier?",
+        "TriggerCondition" : {
+            "Date" : "12.2027",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["14_1"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 25,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["14_2"]
+        }
+    
+    },{
+        "ID" : "14_1",
+        "Title" : "Supply shortage",
+        "Description" : "We found a candidate to become our new supplier. The company sells fuels at much lesser prices, however a quality of them are not very high. Should we proceed with this candidate?",
+        "TriggerCondition" : {
+            "Date" : "02.2028",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : -60,
+            "ClimateChange" : 15,
+            "NextEventIDs" : ["14_1_1"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["14_1_2"]
+        }
+    
+    },{
+        "ID" : "14_1_1",
+        "Title" : "Supply shortage",
+        "Description" : "It is a good deal for us",
+        "TriggerCondition" : {
+            "Date" : "02.2028",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["15"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["15"]
+        }
+    
+    },{
+        "ID" : "14_1_2",
+        "Title" : "Supply shortage",
+        "Description" : "We found another candidate. Unfortinatly we cannot proceed with a search much longer, but this candidate has high quality product with higher prices for it.",
+        "TriggerCondition" : {
+            "Date" : "03.2028",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 15,
+            "ClimateChange" : -10,
+            "NextEventIDs" : ["15"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 15,
+            "ClimateChange" : -10,
+            "NextEventIDs" : ["15"]
+        }
+    
+    },{
+        "ID" : "14_2",
+        "Title" : "Supply shortage",
+        "Description" : "We suffer losses because of the shortage of the supplies",
+        "TriggerCondition" : {
+            "Date" : "12.2027",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["15"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["15"]
+        }
+    
+    },{
+        "ID" : "15",
+        "Title" : "New policy",
+        "Description" : "After last year oil spill governments implemented new policies for oil drilling, so the expenses of oil producers went up and so did ours",
+        "TriggerCondition" : {
+            "Date" : "04.2028",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -500,
+            "ExpensesChange" : 20,
+            "ClimateChange" : -10,
+            "NextEventIDs" : ["16"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : -500,
+            "ExpensesChange" : 20,
+            "ClimateChange" : -10,
+            "NextEventIDs" : ["16"]
+        }
+    
+    },{
+        "ID" : "16",
+        "Title" : "New taxes",
+        "Description" : "There are new taxes for electric companies that are not producing green energy. We are going to be taxed like hell, but do not worry, I know a way out. I have a friend who may make some papers, for a price, that state that we are actually a green energy producers! Should I contact a guy?",
+        "TriggerCondition" : {
+            "Date" : "08.2028",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -2000,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 10,
+            "NextEventIDs" : ["16_1"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 30,
+            "ClimateChange" : -10,
+            "NextEventIDs" : ["16_2"]
+        }
+    
+    },{
+        "ID" : "16_1",
+        "Title" : "New taxes",
+        "Description" : "Our man in the govermnent inspection wrote only good  things in the report about us. We wonder if anyone will notice the lie...",
+        "TriggerCondition" : {
+            "Date" : "08.2028",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["16_1_1"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["16_1_1"]
+        }
+    
+    },{
+        "ID" : "16_1_1",
+        "Title" : "New taxes",
+        "Description" : "Because of the level of the pollution we got another inspection by an inspector who was not so cooperative... He quickly found out that we are not really green",
+        "TriggerCondition" : {
+            "Date" : "11.2028",
+            "Checks" : [{
+                "Field" : "Climate",
+                "Operator" : ">",  
+                "Value" : 65
+            }]
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -3000,
+            "ExpensesChange" : 30,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["17"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : -3000,
+            "ExpensesChange" : 30,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["17"]
+        }
+    
+    },{
+        "ID" : "16_2",
+        "Title" : "New taxes",
+        "Description" : "Taxes hit our revenue",
+        "TriggerCondition" : {
+            "Date" : "08.2028",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 20,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["17"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 20,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["17"]
+        }
+    
+    },{
+        "ID" : "17",
+        "Title" : "Biblethump",
+        "Description" : "There was an outbreak of an unknown virus. It has spread around the globe. It has a drastic effect on our society.",
+        "TriggerCondition" : {
+            "Date" : "12.2028",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : -2500,
+            "ExpensesChange" : 30,
+            "ClimateChange" : -20,
+            "NextEventIDs" : ["18"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : -2500,
+            "ExpensesChange" : 30,
+            "ClimateChange" : -20,
+            "NextEventIDs" : ["18"]
+        }
+    
+    },{
+        "ID" : "18",
+        "Title" : "Finale",
+        "Description" : "A sho tut?",
+        "TriggerCondition" : {
+            "Date" : "04.2029",
+            "Checks" : []
+        },
+    
+        "Accepted" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["18"]
+        },
+        
+        "Rejected" : {
+            "BalanceChange" : 0,
+            "ExpensesChange" : 0,
+            "ClimateChange" : 0,
+            "NextEventIDs" : ["18"]
+        }
+    
+    }]
+}
+
